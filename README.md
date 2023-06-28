@@ -1,2 +1,3 @@
-# calmifyy
-Aplicativo que traz um alívio momentâneo para o usuário 
+# Calmifyy
+
+Aplicativo que traz um alívio momentâneo para o usuário
