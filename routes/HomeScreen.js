@@ -58,18 +58,19 @@ export function HomeScreen() {
                 if(newQuote.q) {
                     const translatedQuote = await translateQuote(newQuote.q);
                     setQuote(translatedQuote);
+                    setAuthor(newQuote.a);
 
-                    await AsyncStorage.setItem('lastAuthor', newQuote.a)
-                    await AsyncStorage.setItem('lastQuote', translatedQuote)
-                    await AsyncStorage.setItem('lastFetchedDate', currentDate)
+                    await AsyncStorage.setItem('lastAuthor', newQuote.a);
+                    await AsyncStorage.setItem('lastQuote', translatedQuote);
+                    await AsyncStorage.setItem('lastFetchedDate', currentDate);
                 }
             } else {
                 // Define a last res API
-                const lastQuote = await AsyncStorage.getItem('lastQuote')
-                const lastAuthor = await AsyncStorage.getItem('lastAuthor')
+                const lastQuote = await AsyncStorage.getItem('lastQuote');
+                const lastAuthor = await AsyncStorage.getItem('lastAuthor');
 
-                setQuote(lastQuote)
-                setAuthor(lastAuthor)
+                setQuote(lastQuote);
+                setAuthor(lastAuthor);
             }
 
         }
