@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-import background from "../assets/background.gif";
-
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
