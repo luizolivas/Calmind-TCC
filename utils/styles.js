@@ -8,23 +8,26 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center'
     },
-    // Home Page
-    sectionContainer: {
-      flex: 1,
-      padding: 10
+    // Screens Utils
+    backContainer: {
+      flexDirection: 'row', 
+      alignItems: 'center', 
+      alignSelf: 'flex-start', 
+      marginLeft: 0, 
     },
-    contentSectionContainer: {
-      flex: 1,
-      alignItems: 'center'
+    backButtonText: {
+        fontSize: 20,
+        marginLeft: 10, 
     },
-    helpContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around'
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginVertical: 20,
     },
-    contentHelpContainer: {
-      marginLeft: 50,
-      marginRight: 50,
-      alignItems: 'center'
+    description: {
+        textAlign: 'center',
+        fontSize: 18,
+        marginVertical: 10,
     }
 });
   

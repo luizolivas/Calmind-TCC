@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useEffect, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 
@@ -84,34 +84,34 @@ export function HomeScreen() {
             <ImageLogo />
             <Text style={{fontSize: 12.5, fontWeight: 500}}>'{quote}'</Text>
             <Text style={{fontSize: 12.5, fontStyle: 'italic'}}>- {author}</Text>
-            <View style={styles.sectionContainer}>
-                <TouchableOpacity style={styles.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
+            <View style={stylesHome.sectionContainer}>
+                <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
                     <Icon name="leanpub" size={35} color={"black"} />
                     <Text>Aprenda sobre Ansiedade</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
+                <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
                     <Icon name="music" size={35} color={"black"} />
                     <Text>Relaxamento Sonoro</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
+                <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
                     <Icon name="headphones" size={35} color={"black"} />
                     <Text>Podcasts</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
+                <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
                     <Icon name="heartbeat" size={35} color={"black"} />
                     <Text>Acalme-se</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
+                <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
                     <Icon name="medkit" size={35} color={"black"} />
                     <Text>Autocuidados</Text>
                 </TouchableOpacity>
             </View>
-            <View style={styles.helpContainer}>
-                <TouchableOpacity style={styles.contentHelpContainer} onPress={() => navigation.navigate("Help")}>
+            <View style={stylesHome.helpContainer}>
+                <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Help")}>
                     <Icon name="question-circle" size={35} color={"black"} />
                     <Text>Ajuda</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
+                <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
                     <Icon name="comments" size={35} color={"black"} />
                     <Text>Conversar</Text>
                 </TouchableOpacity>
@@ -119,3 +119,23 @@ export function HomeScreen() {
         </View>
     );
 }
+
+const stylesHome = StyleSheet.create({
+    sectionContainer: {
+        flex: 1,
+        padding: 10
+      },
+      contentSectionContainer: {
+        flex: 1,
+        alignItems: 'center'
+      },
+      helpContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+      },
+      contentHelpContainer: {
+        marginLeft: 50,
+        marginRight: 50,
+        alignItems: 'center'
+      }
+});
