@@ -8,17 +8,6 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center'
     },
-    // Screens Utils
-    backContainer: {
-      flexDirection: 'row', 
-      alignItems: 'center', 
-      alignSelf: 'flex-start', 
-      marginLeft: 0, 
-    },
-    backButtonText: {
-        fontSize: 20,
-        marginLeft: 10, 
-    },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
