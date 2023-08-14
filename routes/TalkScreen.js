@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, TouchableOpacity, Linking  } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "../utils/styles";
 
@@ -9,8 +8,6 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 
 export function TalkScreen() {
-
-    const navigation = useNavigation();
 
     const openChat = () => {
         Linking.openURL('https://www.cvv.org.br/chat/'); 

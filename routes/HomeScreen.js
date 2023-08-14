@@ -29,7 +29,7 @@ export function HomeScreen() {
             return response.data[0];
         } catch (error) {
             console.error('Error fetching quote:', error);
-            return null;
+            return;
         }
     }
 
