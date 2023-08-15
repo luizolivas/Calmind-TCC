@@ -1,10 +1,11 @@
 import { View, Text  } from "react-native";
 import { useEffect, useState } from 'react';
 
+// Utils
+import { fetchVideos } from "../utils/fetchVideos";
 import { styles } from "../utils/styles";
 
 // Api
-import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Icons in https://fontawesome.com/v4/icons/
@@ -18,19 +19,6 @@ export function AnxietyScreen() {
 
     const [videos, setVideos] = useState([]);
 
-    const fetchAnxietyVideos = async () => {
-        try {
-            const apiKey = 'AIzaSyBrsWY3n5sCkIXqI8h4JF8Ea29axOHw2cw';
-            const searchQuery = 'ansiedade';
-            const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&key=${apiKey}`);
-
-            return response.data.items;
-        } catch (error) {
-            console.error('Error fetching anxiety videos:', error);
-            return;
-        }
-    };
-
     useEffect(() => {
 
         const checkAndFetchVideo = async () => {
@@ -39,8 +27,8 @@ export function AnxietyScreen() {
             const lastFetchedDate = await AsyncStorage.getItem('lastFetchedDateAnxiety');
 
             // If is a new day is a new fetch
-            if(lastFetchedDate !== currentDate) {
-                const anxietyVideos = await fetchAnxietyVideos();
+            if (lastFetchedDate !== currentDate) {
+                const anxietyVideos = await fetchVideos('ansiedade');
                 
                 if(anxietyVideos) {
                     setVideos(anxietyVideos);
@@ -73,7 +61,7 @@ export function AnxietyScreen() {
                 <VideoList videos={videos} />
             )
             : (
-                <Text>Carregando vídeos...</Text>
+                <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
             )}
         </View>
     );
