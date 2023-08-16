@@ -33,14 +33,14 @@ export function AnxietyScreen() {
                 if(anxietyVideos) {
                     setVideos(anxietyVideos);
 
-                    await AsyncStorage.setItem('lastVideosAnxiety', anxietyVideos);
+                    await AsyncStorage.setItem('lastVideosAnxiety', JSON.stringify(anxietyVideos));
                     await AsyncStorage.setItem('lastFetchedDateAnxiety', currentDate);
                 }
             } else {
                 // Define a last res API
                 const anxietyVideos = await AsyncStorage.getItem('lastVideosAnxiety');
 
-                setVideos(anxietyVideos);
+                setVideos(JSON.parse(anxietyVideos));
             }
 
         }

@@ -4,6 +4,7 @@ export function VideoList({ videos }) {
     return (
         <FlatList
             data={videos}
+            nestedScrollEnabled // ScrollView
             keyExtractor={(item) => item.id.videoId}
             renderItem={({ item }) => (
                 <TouchableOpacity
