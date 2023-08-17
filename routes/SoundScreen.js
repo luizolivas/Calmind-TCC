@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView  } from "react-native";
+import { View, Text, StyleSheet, SectionList, TouchableOpacity, Image  } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
@@ -12,7 +12,6 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 // Components
 import { BackButton } from "../components/BackButton/BackButton";
-import { VideoList } from "../components/VideoList/VideoList";
 
 
 export function SoundScreen() {
@@ -69,47 +68,40 @@ export function SoundScreen() {
             <Text style={styles.description}>
                 Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
             </Text>
-            <ScrollView styles={{ flex: 1 }}>
-                <View style={stylesSound.videosContainer}>
-                    <Text style={stylesSound.titleSection}>Lo-fi</Text>
-                    {lofiVideos ? (
-                        <VideoList videos={lofiVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-                <View style={stylesSound.videosContainer}>
-                    <Text style={stylesSound.titleSection}>Meditação</Text>
-                    {meditationVideos ? (
-                        <VideoList videos={meditationVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-                <View style={stylesSound.videosContainer}>
-                    <Text style={stylesSound.titleSection}>432hz</Text>
-                    {specialVideos ? (
-                        <VideoList videos={specialVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-            </ScrollView>
+            <SectionList
+                sections={[
+                {
+                    title: "Lo-fi",
+                    data: lofiVideos,
+                },
+                {
+                    title: "Meditação",
+                    data: meditationVideos,
+                },
+                {
+                    title: "432hz",
+                    data: specialVideos,
+                },
+                ]}
+                keyExtractor={(item) => item.id.videoId}
+                renderItem={({ item }) => (
+                <TouchableOpacity
+                    key={item.id.videoId}
+                    style={styles.videoContainer}
+                    onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${item.id.videoId}`)}
+                >
+                    <Image
+                        source={{ uri: item.snippet.thumbnails.high.url }}
+                        style={styles.thumbnail}
+                    />
+                    <Text style={styles.videoTitle}>{item.snippet.title}</Text>
+                </TouchableOpacity>
+                )}
+                renderSectionHeader={({ section }) => (
+                <Text style={{alignSelf: 'center', fontSize: 20, fontWeight: 'bold'}}>{section.title}</Text>
+                )}
+                ListHeaderComponent={null}
+            />
         </View>
     );
 }
-
-const stylesSound = StyleSheet.create({
-    videosContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    titleSection: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    }
-})

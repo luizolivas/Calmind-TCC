@@ -1,4 +1,6 @@
-import { Text, StyleSheet, TouchableOpacity, FlatList, Image, Linking  } from "react-native";
+import { Text, TouchableOpacity, FlatList, Image, Linking  } from "react-native";
+
+import { styles } from "../../utils/styles";
 
 export function VideoList({ videos }) {
     return (
@@ -8,34 +10,17 @@ export function VideoList({ videos }) {
             keyExtractor={(item) => item.id.videoId}
             renderItem={({ item }) => (
                 <TouchableOpacity
-                    style={stylesVideo.videoContainer}
+                    key={item.id.videoId}
+                    style={styles.videoContainer}
                     onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${item.id.videoId}`)}
                 >
                     <Image
                         source={{ uri: item.snippet.thumbnails.high.url }}
-                        style={stylesVideo.thumbnail}
+                        style={styles.thumbnail}
                     />
-                    <Text style={stylesVideo.videoTitle}>{item.snippet.title}</Text>
+                    <Text style={styles.videoTitle}>{item.snippet.title}</Text>
                 </TouchableOpacity>
             )}
         />
     );
 }
-
-const stylesVideo = StyleSheet.create({
-    videoPlayer: {
-        alignSelf: 'center'
-    },
-    videoContainer: {
-        alignItems: 'center',
-        marginVertical: 10,
-    },
-    videoTitle: {
-        fontSize: 16,
-        fontWeight: 'bold'
-    },
-    thumbnail: {
-        width: 240,
-        height: 160,
-    }
-});

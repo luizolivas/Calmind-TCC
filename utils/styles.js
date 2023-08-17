@@ -17,6 +17,19 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
         marginVertical: 10,
+    },
+    // Videos Style
+    videoContainer: {
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    videoTitle: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    thumbnail: {
+        width: 240,
+        height: 160,
     }
 });
   
