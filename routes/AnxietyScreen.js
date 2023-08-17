@@ -1,4 +1,4 @@
-import { View, Text  } from "react-native";
+import { View, Text } from "react-native";
 import { useEffect, useState } from 'react';
 
 // Utils
@@ -42,7 +42,6 @@ export function AnxietyScreen() {
 
                 setVideos(JSON.parse(anxietyVideos));
             }
-
         }
 
         checkAndFetchVideo();

@@ -13,7 +13,6 @@ import Icon from "react-native-vector-icons/FontAwesome";
 // Components
 import { BackButton } from "../components/BackButton/BackButton";
 
-
 export function SoundScreen() {
 
     const [lofiVideos, setlofiVideos] = useState([]);
