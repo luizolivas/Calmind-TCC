@@ -41,11 +41,6 @@ export function TalkScreen() {
 }
 
 const stylesTalk = StyleSheet.create({
-    buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginVertical: 110,
-    },
     button: {
         marginRight: 40,
         marginLeft: 40, 
