@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'center'
     },
     title: {
+        textAlign: 'center',
         fontSize: 24,
         fontWeight: 'bold',
         marginVertical: 20,
@@ -18,13 +19,17 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         marginVertical: 10,
     },
+    icon: {
+        textAlign: 'center'
+    },
     // Videos Style
     videoContainer: {
         alignItems: 'center',
         marginVertical: 10,
     },
     videoTitle: {
-        fontSize: 16,
+        textAlign: 'center',
+        fontSize: 20,
         fontWeight: 'bold'
     },
     thumbnail: {

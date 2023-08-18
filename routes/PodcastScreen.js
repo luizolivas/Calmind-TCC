@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
@@ -50,17 +50,21 @@ export function PodcastScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <Icon name="headphones" size={100} color={"black"} />
-            <Text style={styles.title}>Podcasts</Text>
-            <Text style={styles.description}>
-                Confira alguns dos podcasts mais recomendados abaixo:
-            </Text>
-            {videos ? (
-                <VideoList videos={videos} />
-            )
-            : (
-                <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-            )}
+            <ScrollView>
+                <Icon style={styles.icon} name="headphones" size={100} color={"black"} />
+                <Text style={styles.title}>Podcasts</Text>
+                <Text style={styles.description}>
+                    Confira alguns dos podcasts mais recomendados abaixo:
+                </Text>
+                <View>
+                    {videos ? (
+                        <VideoList videos={videos} />
+                    )
+                    : (
+                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
+                    )}
+                </View>
+            </ScrollView>
         </View>
     );
 }

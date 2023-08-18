@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { useEffect, useState } from 'react';
 
 // Utils
@@ -51,17 +51,21 @@ export function AnxietyScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <Icon name="leanpub" size={100} color={"black"} />
-            <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
-            <Text style={styles.description}>
-                Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.
-            </Text>
-            {videos ? (
-                <VideoList videos={videos} />
-            )
-            : (
-                <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-            )}
+            <ScrollView>
+                <Icon style={styles.icon} name="leanpub" size={100} color={"black"} />
+                <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
+                <Text style={styles.description}>
+                    Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.
+                </Text>
+                <View>
+                    {videos ? (
+                        <VideoList videos={videos} />
+                    )
+                    : (
+                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
+                    )}
+                </View>
+            </ScrollView>
         </View>
     );
 }
