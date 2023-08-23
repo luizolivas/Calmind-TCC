@@ -27,7 +27,7 @@ export function PodcastScreen() {
 
             // If is a new day is a new fetch
             if (lastFetchedDate !== currentDate) {
-                const podcastVideos = await fetchVideos('podcast ansiedade');
+                const podcastVideos = await fetchVideos('podcast ansiedade', 10);
                 
                 if(podcastVideos) {
                     setVideos(podcastVideos);

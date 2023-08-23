@@ -29,9 +29,9 @@ export function SoundScreen() {
 
             // If is a new day is a new fetch
             if(lastFetchedDate !== currentDate) {
-                const lofiVideosData = await fetchVideos('lofi');
-                const meditationVideosData = await fetchVideos('meditação');
-                const specialVideosData = await fetchVideos('432hz');
+                const lofiVideosData = await fetchVideos('lofi', 5);
+                const meditationVideosData = await fetchVideos('meditação', 5);
+                const specialVideosData = await fetchVideos('432hz', 5);
                 
                 if(lofiVideosData) {
                     setlofiVideos(lofiVideosData);

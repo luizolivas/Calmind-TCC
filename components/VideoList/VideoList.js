@@ -11,8 +11,8 @@ export function VideoList({ videos }) {
                 onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${video.id.videoId}`)}
             >
                 <Image
-                source={{ uri: video.snippet.thumbnails.high.url }}
-                style={styles.thumbnail}
+                    source={{ uri: video.snippet.thumbnails.high.url }}
+                    style={styles.thumbnail}
                 />
                 <Text style={styles.videoTitle}>{video.snippet.title}</Text>
             </TouchableOpacity>

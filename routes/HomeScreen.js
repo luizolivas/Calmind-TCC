@@ -124,18 +124,18 @@ const stylesHome = StyleSheet.create({
     sectionContainer: {
         flex: 1,
         padding: 10
-      },
+    },
       contentSectionContainer: {
         flex: 1,
         alignItems: 'center'
-      },
+    },
       helpContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-around'
-      },
-      contentHelpContainer: {
-        marginLeft: 50,
-        marginRight: 50,
+        justifyContent: 'space-around',
         alignItems: 'center'
-      }
+    },
+      contentHelpContainer: {
+        flex: 1,
+        alignItems: 'center'
+    }
 });

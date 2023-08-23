@@ -28,7 +28,7 @@ export function AnxietyScreen() {
 
             // If is a new day is a new fetch
             if (lastFetchedDate !== currentDate) {
-                const anxietyVideos = await fetchVideos('ansiedade');
+                const anxietyVideos = await fetchVideos('ansiedade', 10);
                 
                 if(anxietyVideos) {
                     setVideos(anxietyVideos);

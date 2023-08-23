@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export async function fetchVideos(searchQuery) {
+export async function fetchVideos(searchQuery, quantity) {
     try {
         const apiKey = 'AIzaSyBrsWY3n5sCkIXqI8h4JF8Ea29axOHw2cw';
-        const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&key=${apiKey}`);
+        const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
 
         return response.data.items;
     } catch (error) {

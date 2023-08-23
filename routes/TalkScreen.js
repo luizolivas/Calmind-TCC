@@ -43,11 +43,11 @@ export function TalkScreen() {
 const stylesTalk = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginVertical: 25,
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     button: {
-        marginRight: 40,
-        marginLeft: 40, 
+        flex: 1,
+        alignItems: 'center'
     }
 });
