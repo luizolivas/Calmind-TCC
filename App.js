@@ -12,6 +12,11 @@ import { CalmScreen } from './routes/CalmScreen';
 import { SelfcareScreen } from './routes/SelfcareScreen';
 import { HelpScreen } from './routes/HelpScreen';
 import { TalkScreen } from './routes/TalkScreen';
+import { DiafragmaticScreen } from './routes/respirations/DiafragmaticScreen';
+import { FireScreenScreen } from './routes/respirations/FireScreen';
+import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen';
+import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
+
 
 export default function App() {
   return (
@@ -24,6 +29,10 @@ export default function App() {
         <Stack.Screen name="Calm" component={CalmScreen} />
         <Stack.Screen name="Selfcare" component={SelfcareScreen} />
         <Stack.Screen name="Help" component={HelpScreen} />
+        <Stack.Screen name="Diafragmatic" component={DiafragmaticScreen} />
+        <Stack.Screen name="Fire" component={FireScreenScreen} />
+        <Stack.Screen name="FourSevenEight" component={FourSevenEightScreen} />
+        <Stack.Screen name="Pranayama" component={PranayamaScreen} />
         <Stack.Screen name="Talk" component={TalkScreen} />
       </Stack.Navigator>
     </NavigationContainer>

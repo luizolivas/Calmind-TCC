@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Linking, ScrollView } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 import { styles } from "../utils/styles";
 
 // Icons in https://fontawesome.com/v4/icons/
@@ -9,44 +9,71 @@ import { BackButton } from "../components/BackButton/BackButton";
 
 export function CalmScreen() {
 
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
             <BackButton />
             <ScrollView>
-            <Icon style={styles.icon} name="leaf" size={100} color={"black"} />
-            <Text style={styles.title}>Acalme-se</Text>
-            <Text style={styles.description}>
-                Técnicas de respiração é uma das melhores formas de tranquilizar a mente e acalmar os pensamentos. Confira as recomendações de cada e experimente a que mais se adeque á sua necessidade
-            </Text>
-            <View style={stylesCalm.card}>
-                <View style={stylesCalm.cardInside}>
-                    <Text style={stylesCalm.title}>Respiração 4-7-8</Text>
-                    <Text style={stylesCalm.description}>Recomendações: {'\n'}
-                        • {'\n'}
-                        • {'\n'}
-                        • {'\n'}
-                    </Text>
-                    <TouchableOpacity style={stylesCalm.touchableButton}>
-                        <Text style={stylesCalm.buttonText}>Começar</Text>
-                    </TouchableOpacity>
+                <Icon style={styles.icon} name="leaf" size={100} color={"black"} />
+                <Text style={styles.title}>Acalme-se</Text>
+                <Text style={styles.description}>
+                    Técnicas de respiração é uma das melhores formas de tranquilizar a mente e acalmar os pensamentos. Confira as recomendações de cada e experimente a que mais se adeque á sua necessidade
+                </Text>
+                <View style={stylesCalm.card}>
+                    <View style={stylesCalm.cardInside}>
+                        <Text style={stylesCalm.title}>Respiração 4-7-8</Text>
+                        <Text style={stylesCalm.description}>Recomendações: {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                        </Text>
+                        <TouchableOpacity style={stylesCalm.touchableButton} onPress={() => navigation.navigate("FourSevenEight")}>
+                            <Text style={stylesCalm.buttonText}>Começar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
-            <View style={stylesCalm.card}>
-                <View style={stylesCalm.cardInside}>
-                    <Text style={stylesCalm.title}>Respiração Diafragmática</Text>
-                    <Text style={stylesCalm.description}>Recomendações: {'\n'}
-                        • {'\n'}
-                        • {'\n'}
-                        • {'\n'}
-                    </Text>
-                    <TouchableOpacity style={stylesCalm.touchableButton}>
-                        <Text style={stylesCalm.buttonText}>Começar</Text>
-                    </TouchableOpacity>
+                <View style={stylesCalm.card}>
+                    <View style={stylesCalm.cardInside}>
+                        <Text style={stylesCalm.title}>Respiração Diafragmática</Text>
+                        <Text style={stylesCalm.description}>Recomendações: {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                        </Text>
+                        <TouchableOpacity style={stylesCalm.touchableButton} onPress={() => navigation.navigate("Diafragmatic")}>
+                            <Text style={stylesCalm.buttonText}>Começar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+                <View style={stylesCalm.card}>
+                    <View style={stylesCalm.cardInside}>
+                        <Text style={stylesCalm.title}>Respiração do Fogo (Mente Brilhante)</Text>
+                        <Text style={stylesCalm.description}>Recomendações: {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                        </Text>
+                        <TouchableOpacity style={stylesCalm.touchableButton} onPress={() => navigation.navigate("Fire")}>
+                            <Text style={stylesCalm.buttonText}>Começar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={stylesCalm.card}>
+                    <View style={stylesCalm.cardInside}>
+                        <Text style={stylesCalm.title}>Respiração Pranayama Surya Bedhana</Text>
+                        <Text style={stylesCalm.description}>Recomendações: {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                            • {'\n'}
+                        </Text>
+                        <TouchableOpacity style={stylesCalm.touchableButton} onPress={() => navigation.navigate("Pranayama")}>
+                            <Text style={stylesCalm.buttonText}>Começar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </ScrollView>
-            
+
         </View>
     );
 }
@@ -81,13 +108,13 @@ const stylesCalm = StyleSheet.create({
     touchableButton: {
         backgroundColor: '#00ff91',
         borderRadius: 8,
-        padding: 10, 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-      },
-      buttonText: {
-        color: '#FFFFFF', 
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonText: {
+        color: '#FFFFFF',
         fontSize: 16,
-        fontWeight: 'bold', 
-      },
+        fontWeight: 'bold',
+    },
 });
