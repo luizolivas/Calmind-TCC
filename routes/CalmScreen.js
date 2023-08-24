@@ -18,8 +18,7 @@ export function CalmScreen() {
                 <Icon style={styles.icon} name="leaf" size={100} color={"black"} />
                 <Text style={styles.title}>Acalme-se</Text>
                 <Text style={styles.description}>
-                    Técnicas de respiração é uma das melhores formas de tranquilizar a mente e acalmar os pensamentos. Confira as recomendações de cada e experimente a que mais se adeque á sua necessidade
-                </Text>
+                    Aprenda técnicas de respiração para acalmar a mente e encontrar tranquilidade. Descubra recomendações para suas necessidades.                </Text>
                 <View style={stylesCalm.card}>
                     <View style={stylesCalm.cardInside}>
                         <Text style={stylesCalm.title}>Respiração 4-7-8</Text>
