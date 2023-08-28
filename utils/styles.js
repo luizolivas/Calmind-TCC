@@ -35,6 +35,12 @@ export const styles = StyleSheet.create({
     thumbnail: {
         width: 240,
         height: 160,
+    },
+    // Cards Style
+    containerCards: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
   

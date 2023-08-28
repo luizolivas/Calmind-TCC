@@ -12,11 +12,12 @@ import { CalmScreen } from './routes/CalmScreen';
 import { SelfcareScreen } from './routes/SelfcareScreen';
 import { HelpScreen } from './routes/HelpScreen';
 import { TalkScreen } from './routes/TalkScreen';
+
+// Respirations
 import { DiafragmaticScreen } from './routes/respirations/DiafragmaticScreen';
 import { FireScreenScreen } from './routes/respirations/FireScreen';
 import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen';
 import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
-
 
 export default function App() {
   return (
