@@ -2,12 +2,12 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 
-export function CardView({ children, title, navigate }) {
+export function CardView({ children, title, navigate, bgColor }) {
 
     const navigation = useNavigation();
 
     return (
-        <View style={stylesCard.card}>
+        <View style={[stylesCard.card, {backgroundColor: bgColor}]}>
             <View style={stylesCard.cardInside}>
                 <Text style={stylesCard.title}>{title}</Text>
                 <Text style={stylesCard.description}>Recomendações:</Text>
@@ -27,19 +27,22 @@ const stylesCard = StyleSheet.create({
         borderRadius: 8,
         width: 230,
         marginBottom: 20,
-        padding: 16,
-        backgroundColor: '#E0E0E0',
+        padding: 16
     },
     title: {
+        color: 'white',
         fontSize: 18,
         fontWeight: 'bold',
         borderBottomWidth: 1,
+        textAlign: 'center'
     },
     description: {
+        color: 'white',
         fontSize: 14,
+        marginVertical: 5
     },
     touchableButton: {
-        backgroundColor: '#00ff91',
+        backgroundColor: '#50C878',
         borderRadius: 8,
         padding: 10,
         alignItems: 'center',
