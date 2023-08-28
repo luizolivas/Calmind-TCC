@@ -19,6 +19,11 @@ import { FireScreenScreen } from './routes/respirations/FireScreen';
 import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen';
 import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
 
+// Selfcares
+import { Sofrology } from './routes/selfcares/Sofrology';
+import { Automassage } from './routes/selfcares/Automassage';
+import { Harmonization } from './routes/selfcares/Harmonization';
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -35,6 +40,9 @@ export default function App() {
         <Stack.Screen name="FourSevenEight" component={FourSevenEightScreen} />
         <Stack.Screen name="Pranayama" component={PranayamaScreen} />
         <Stack.Screen name="Talk" component={TalkScreen} />
+        <Stack.Screen name="Sofrology" component={Sofrology} />
+        <Stack.Screen name="Automassage" component={Automassage} />
+        <Stack.Screen name="Harmonization" component={Harmonization} />
       </Stack.Navigator>
     </NavigationContainer>
   );

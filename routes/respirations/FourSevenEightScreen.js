@@ -66,6 +66,7 @@ export function FourSevenEightScreen() {
                 }}>
                 <Text style={stylesFourSevenEight.buttonText}>REINICIAR</Text>
             </TouchableOpacity>
+            <View style={{flex: 1}}></View>
         </View>
     );
 }

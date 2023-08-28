@@ -21,9 +21,11 @@ export function SelfcareScreen() {
                     Priorize seu bem-estar com nossas práticas de autocuidado.
                 </Text>
                 <View style={styles.containerCards}>
-                    <CardView title="Algum autocuidado" navigate="Home">
+                    <CardView title="Sofrologia" navigate="Sofrology">
                     </CardView>
-                    <CardView title="Outro autocuidado" navigate="Home">
+                    <CardView title="Automassagem" navigate="Automassage">
+                    </CardView>
+                    <CardView title="Harmonizaçãpo dos Chakras" navigate="Harmonization">
                     </CardView>
                 </View>
             </ScrollView>

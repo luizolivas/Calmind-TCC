@@ -12,12 +12,13 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 24,
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: 20
     },
     description: {
         textAlign: 'center',
         fontSize: 18,
-        marginVertical: 10,
+        marginTop: 10,
+        marginBottom: 20
     },
     icon: {
         textAlign: 'center'
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
     // Videos Style
     videoContainer: {
         alignItems: 'center',
-        marginVertical: 10,
+        marginVertical: 10
     },
     videoTitle: {
         textAlign: 'center',
@@ -34,7 +35,7 @@ export const styles = StyleSheet.create({
     },
     thumbnail: {
         width: 240,
-        height: 160,
+        height: 160
     },
     // Cards Style
     containerCards: {
