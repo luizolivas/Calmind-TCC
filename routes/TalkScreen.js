@@ -36,6 +36,7 @@ export function TalkScreen() {
                     <Text style={styles.description}>Ligue</Text> 
                 </TouchableOpacity>
             </View>
+            <View style={{flex: 1}}></View>
         </View>
     );
 }

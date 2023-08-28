@@ -50,7 +50,7 @@ export function PodcastScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Icon style={styles.icon} name="headphones" size={100} color={"black"} />
                 <Text style={styles.title}>Podcasts</Text>
                 <Text style={styles.description}>

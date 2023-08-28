@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Text, TouchableOpacity, StyleSheet, SafeAreaView, View } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, View } from 'react-native';
+import { useState, useEffect } from 'react';
 
+import { styles } from '../../utils/styles';
+
+// Component
 import { BackButton } from "../../components/BackButton/BackButton";
 
 export function FourSevenEightScreen() {
+
     const [isStopwatchStart, setIsStopwatchStart] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [circleColor, setCircleColor] = useState('lightblue'); 
@@ -40,48 +44,33 @@ export function FourSevenEightScreen() {
     }, [isStopwatchStart, currentTime]);
 
     return (
-        
-            <View style={styles.container}>
-                <BackButton></BackButton>
-                <Text style={styles.title}>Ciclos de respirações realizados: {counterCicles}</Text>
-                <View style={[styles.circle, { backgroundColor: circleColor }]}>
-                    <Text style={styles.circleText}>{currentTime}</Text>
-                </View>
-                <TouchableOpacity
-                    onPress={() => {
-                        setIsStopwatchStart(!isStopwatchStart);
-                        setCircleColor('lightblue');
-                    }}>
-                    <Text style={styles.buttonText}>
-                        {!isStopwatchStart ? 'INICIAR' : 'PARAR'}
-                    </Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    onPress={() => {
-                        setIsStopwatchStart(false);
-                        setCurrentTime(0);
-                    }}>
-                    <Text style={styles.buttonText}>REINICIAR</Text>
-                </TouchableOpacity>
+        <View style={styles.container}>
+            <BackButton />
+            <Text style={styles.title}>Ciclos de respirações realizados: {counterCicles}</Text>
+            <View style={[stylesFourSevenEight.circle, { backgroundColor: circleColor }]}>
+                <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
             </View>
-
+            <TouchableOpacity
+                onPress={() => {
+                    setIsStopwatchStart(!isStopwatchStart);
+                    setCircleColor('lightblue');
+                }}>
+                <Text style={stylesFourSevenEight.buttonText}>
+                    {!isStopwatchStart ? 'INICIAR' : 'PARAR'}
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => {
+                    setIsStopwatchStart(false);
+                    setCurrentTime(0);
+                }}>
+                <Text style={stylesFourSevenEight.buttonText}>REINICIAR</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-    },
-    title: {
-        textAlign: 'center',
-        fontSize: 25,
-        fontWeight: 'bold',
-        padding: 20,
-    },
+const stylesFourSevenEight = StyleSheet.create({
     secondsText: {
         fontSize: 40,
         marginBottom: 20,

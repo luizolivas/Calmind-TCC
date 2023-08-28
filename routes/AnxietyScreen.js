@@ -51,7 +51,7 @@ export function AnxietyScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Icon style={styles.icon} name="leanpub" size={100} color={"black"} />
                 <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
                 <Text style={styles.description}>
