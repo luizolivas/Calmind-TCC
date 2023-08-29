@@ -19,6 +19,9 @@ import { FireScreenScreen } from './routes/respirations/FireScreen';
 import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen';
 import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
 
+// Respirations Instructions
+import { InsFourSevenEightScreen } from './routes/instructions calm/InsFourSevenEightScreen';
+
 // Selfcares
 import { Sofrology } from './routes/selfcares/Sofrology';
 import { Automassage } from './routes/selfcares/Automassage';
@@ -38,6 +41,7 @@ export default function App() {
         <Stack.Screen name="Diafragmatic" component={DiafragmaticScreen} />
         <Stack.Screen name="Fire" component={FireScreenScreen} />
         <Stack.Screen name="FourSevenEight" component={FourSevenEightScreen} />
+        <Stack.Screen name="InstructionFourSevenEight" component={InsFourSevenEightScreen} />
         <Stack.Screen name="Pranayama" component={PranayamaScreen} />
         <Stack.Screen name="Talk" component={TalkScreen} />
         <Stack.Screen name="Sofrology" component={Sofrology} />

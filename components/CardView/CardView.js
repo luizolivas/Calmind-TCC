@@ -13,7 +13,7 @@ export function CardView({ children, title, navigate }) {
                 <Text style={stylesCard.description}>Recomendações:</Text>
                     {children} 
                 <TouchableOpacity style={stylesCard.touchableButton} onPress={() => navigation.navigate(navigate)}>
-                    <Text style={stylesCard.buttonText}>Começar</Text>
+                    <Text style={stylesCard.buttonText}>Escolher</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -21,7 +21,7 @@ export function CalmScreen() {
                     Aprenda técnicas de respiração para acalmar a mente e encontrar tranquilidade. Descubra recomendações para suas necessidades.
                 </Text>
                 <View style={styles.containerCards}>
-                    <CardView title="Respiração 4-7-8" navigate="FourSevenEight">
+                    <CardView title="Respiração 4-7-8" navigate="InstructionFourSevenEight">
                     </CardView>
                     <CardView title="Respiração Diafragmática" navigate="Diafragmatic">
                     </CardView>
