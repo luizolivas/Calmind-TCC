@@ -8,6 +8,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 // Components
 import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
+import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
 export function SelfcareScreen() {
 
@@ -21,11 +22,15 @@ export function SelfcareScreen() {
                     Priorize seu bem-estar com nossas práticas de autocuidado.
                 </Text>
                 <View style={styles.containerCards}>
-                    <CardView title="Sofrologia" navigate="Sofrology" bgColor='black'>
+                    <CardView title="Sofrologia" navigate="Sofrology" bgColor='#E1C16E'>
+                        <CardRecomendation text="Fluxo Sanguíneo" bgColor="#DAA06D" />
                     </CardView>
-                    <CardView title="Automassagem" navigate="Automassage" bgColor='black'>
+                    <CardView title="Automassagem" navigate="Automassage" bgColor='#E1C16E'>
+                        <CardRecomendation text="Relaxamento Muscular" bgColor="#DAA06D" />
                     </CardView>
-                    <CardView title="Harmonizaçãpo dos Chakras" navigate="Harmonization" bgColor='black'>
+                    <CardView title="Harmonizaçãpo dos Chakras" navigate="Harmonization" bgColor='#E1C16E'>
+                        <CardRecomendation text="Foco" bgColor="#DAA06D" />
+                        <CardRecomendation text="Sono" bgColor="#DAA06D" />
                     </CardView>
                 </View>
             </ScrollView>
