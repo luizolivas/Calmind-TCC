@@ -66,7 +66,8 @@ const stylesIns = StyleSheet.create({
     },
     selectedButtonSound: {
         backgroundColor: 'lightblue',
-        borderRadius: 8
+        borderRadius: 8,
+        elevation: 5
     },
     button: {
         width: 260,

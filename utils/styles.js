@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     // Videos Style
     videoContainer: {
         alignItems: 'center',
-        marginVertical: 10
+        marginVertical: 10,
     },
     videoTitle: {
         textAlign: 'center',

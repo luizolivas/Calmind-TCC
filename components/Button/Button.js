@@ -14,6 +14,7 @@ const stylesButton = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 5
     },
     buttonText: {
         color: '#FFFFFF',

@@ -28,7 +28,8 @@ const stylesCard = StyleSheet.create({
         borderRadius: 8,
         width: 230,
         marginBottom: 20,
-        padding: 16
+        padding: 16,
+        elevation: 5
     },
     title: {
         color: 'white',
