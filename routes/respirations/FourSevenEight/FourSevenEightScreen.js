@@ -22,6 +22,7 @@ export function FourSevenEightScreen() {
     const [sound, setSound] = useState(null);
     const [countdown, setCountdown] = useState(3);
     const [isSoundPlaying, setIsSoundPlaying] = useState(false); // Estado para rastrear se o som está tocando
+    const [instruction, setInstruction] = useState('Inspire: Respire pelo nariz por 4 segundos.')
 
     const route = useRoute();
     const { isSoundOn } = route.params;
@@ -78,15 +79,18 @@ export function FourSevenEightScreen() {
             }, 1000);
             if (currentTime === 5 && circleColor == 'lightblue') {
                 setCurrentTime(1)
+                setInstruction('Prenda: Segure a respiração por 7 segundos.')
                 setCircleColor('green');
             }
             else if (currentTime === 8 && circleColor == 'green') {
                 setCurrentTime(1)
+                setInstruction('Expire: Solte o ar pela boca por 8 segundos.')
                 setCircleColor('red');
             }
             else if (currentTime === 9 && circleColor == 'red') {
                 setCurrentTime(0)
                 setCounterCicles(counterCicles + 1)
+                setInstruction('Inspire: Respire pelo nariz por 4 segundos.')
                 setCircleColor('lightblue');
             }
         } else {
@@ -121,7 +125,6 @@ export function FourSevenEightScreen() {
     return (
         <View style={styles.container}>
             <View style={{ flex: 1 }}></View>
-            <Text>{isSoundOn ? 'Som Ativo' : 'Som Mutado'}</Text>
             {/* Renderiza a contagem regressiva ou o número de ciclos */}
             {countdown > 0 ? (
                 <Text style={styles.title}>Começando em: {countdown}</Text>
@@ -134,7 +137,17 @@ export function FourSevenEightScreen() {
             <View style={[stylesFourSevenEight.circle, { backgroundColor: circleColor }]}>
                 <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
             </View>
-            <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button}/>
+
+            {/* Renderiza a contagem regressiva ou o número de ciclos */}
+            {countdown > 0 ? (
+                <Text></Text>
+            ) : (
+                <Text style={styles.description}>{instruction}</Text>
+            )}
+            <View style={styles.instructionsContainer}>
+                <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button} />
+            </View>
+
             <View style={{ flex: 1 }}></View>
         </View>
     );
@@ -163,5 +176,10 @@ const stylesFourSevenEight = StyleSheet.create({
         width: 150,
         height: 60,
         marginTop: 50
+    },
+    instructionsContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 20,
     },
 });
