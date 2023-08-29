@@ -138,15 +138,18 @@ export function FourSevenEightScreen() {
                 <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
             </View>
 
-            {/* Renderiza a contagem regressiva ou o número de ciclos */}
-            {countdown > 0 ? (
-                <Text></Text>
-            ) : (
-                <Text style={styles.description}>{instruction}</Text>
-            )}
-            <View style={styles.instructionsContainer}>
-                <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button} />
+            <View style={stylesFourSevenEight.instructionsContainer}>
+                {/* Renderiza a contagem regressiva ou o número de ciclos */}
+                {countdown > 0 ? (
+                    <Text></Text>
+                ) : (
+                    <Text style={styles.description}>{instruction}</Text>
+                )}
+                <View >
+                    <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button} />
+                </View>
             </View>
+
 
             <View style={{ flex: 1 }}></View>
         </View>
