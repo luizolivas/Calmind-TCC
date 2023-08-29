@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from 'react';
 
-import { styles } from "../../utils/styles";
+import { styles } from "../../../utils/styles";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -9,8 +9,8 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 // Components
-import { BackButton } from "../../components/BackButton/BackButton";
-import { Button } from "../../components/Button/Button";
+import { BackButton } from "../../../components/BackButton/BackButton";
+import { Button } from "../../../components/Button/Button";
 
 export function InsFourSevenEightScreen() {
     const [isSoundOn, setIsSoundOn] = useState(true);
@@ -66,7 +66,7 @@ const stylesIns = StyleSheet.create({
     },
     selectedButtonSound: {
         backgroundColor: 'lightblue',
-        borderRadius: 8,
+        borderRadius: 8
     },
     button: {
         width: 260,

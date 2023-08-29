@@ -1,6 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-
-import { styles } from "../../utils/styles";
+import { View, Text, StyleSheet } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../Button/Button";

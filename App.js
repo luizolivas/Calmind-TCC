@@ -14,18 +14,18 @@ import { HelpScreen } from './routes/HelpScreen';
 import { TalkScreen } from './routes/TalkScreen';
 
 // Respirations
-import { DiafragmaticScreen } from './routes/respirations/DiafragmaticScreen';
-import { FireScreenScreen } from './routes/respirations/FireScreen';
-import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen';
-import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
+import { DiafragmaticScreen } from './routes/respirations/Diafragmatic/DiafragmaticScreen';
+import { FireScreenScreen } from './routes/respirations/Fire/FireScreen';
+import { FourSevenEightScreen } from './routes/respirations/FourSevenEight/FourSevenEightScreen';
+import { PranayamaScreen } from './routes/respirations/Pranayama/PranayamaScreen';
 
 // Respirations Instructions
-import { InsFourSevenEightScreen } from './routes/instructions-calm/InsFourSevenEightScreen';
+import { InsFourSevenEightScreen } from './routes/respirations/FourSevenEight/InsFourSevenEightScreen';
 
 // Selfcares
-import { Sofrology } from './routes/selfcares/Sofrology';
-import { Automassage } from './routes/selfcares/Automassage';
-import { Harmonization } from './routes/selfcares/Harmonization';
+import { Sofrology } from './routes/selfcares/Sofrology/Sofrology';
+import { Automassage } from './routes/selfcares/Automassage/Automassage';
+import { Harmonization } from './routes/selfcares/Harmonization/Harmonization';
 
 export default function App() {
   return (

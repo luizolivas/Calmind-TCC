@@ -1,13 +1,14 @@
-import { Text, TouchableOpacity, StyleSheet, View, BackHandler } from 'react-native';
-import React, { useState, useEffect } from 'react';
-import { useRoute } from '@react-navigation/native';
-import { useNavigation } from "@react-navigation/native";
+import { Text, StyleSheet, View, BackHandler } from 'react-native';
+import { useState, useEffect } from 'react';
+
+import { styles } from '../../../utils/styles';
+
+import { useRoute, useNavigation } from '@react-navigation/native';
+
 import { Audio } from 'expo-av';
 
-// Importando os estilos do arquivo styles.js
-import { styles } from '../../utils/styles';
-import { BackButton } from '../../components/BackButton/BackButton';
-import { Button } from '../../components/Button/Button';
+// Components
+import { Button } from '../../../components/Button/Button';
 
 export function FourSevenEightScreen() {
 
@@ -28,7 +29,7 @@ export function FourSevenEightScreen() {
     // Função para tocar o som
     async function playSound() {
         console.log('Loading Sound');
-        const { sound } = await Audio.Sound.createAsync(require('../../assets/audios/SoundHz.mp3'));
+        const { sound } = await Audio.Sound.createAsync(require('../../../assets/audios/SoundHz.mp3'));
         setSound(sound);
 
         console.log('Playing Sound');
@@ -119,7 +120,6 @@ export function FourSevenEightScreen() {
 
     return (
         <View style={styles.container}>
-            <BackButton />
             <View style={{ flex: 1 }}></View>
             <Text>{isSoundOn ? 'Som Ativo' : 'Som Mutado'}</Text>
             {/* Renderiza a contagem regressiva ou o número de ciclos */}
