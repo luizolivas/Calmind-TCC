@@ -8,7 +8,9 @@ import { useNavigation } from "@react-navigation/native";
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
 
+// Components
 import { BackButton } from "../../components/BackButton/BackButton";
+import { Button } from "../../components/Button/Button";
 
 export function InsFourSevenEightScreen() {
     const [isSoundOn, setIsSoundOn] = useState(true);
@@ -25,8 +27,7 @@ export function InsFourSevenEightScreen() {
 
     const navigateRespirate = () => {
         navigation.navigate('FourSevenEight', { isSoundOn });
-      };
-
+    };
 
     return (
         <View style={styles.container}>
@@ -35,70 +36,42 @@ export function InsFourSevenEightScreen() {
             <Text style={styles.description}>
                 Iremos ajudar você a realizar a técnica de respiração 4-7-8, uma ótima maneira de acalmar a mente e relaxar. Encontre um local tranquilo e sente-se ou deite-se confortavelmente.
             </Text>
-
-            <View style={stylesCalm.soundButtonsContainer}>
-                <TouchableOpacity onPress={on} style={[stylesCalm.button, isSoundOn && stylesCalm.selectedButton]}>
+            <View style={stylesIns.buttonSoundContainer}>
+                <TouchableOpacity onPress={on} style={[stylesIns.buttonSound, isSoundOn && stylesIns.selectedButtonSound]}>
                     <Icon name="volume-up" size={50} color="black" />
                     <Text >Som ligado</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={mute} style={[stylesCalm.button, !isSoundOn && stylesCalm.selectedButton]}>
+                <TouchableOpacity onPress={mute} style={[stylesIns.buttonSound, !isSoundOn && stylesIns.selectedButtonSound]}>
                     <Icon name="volume-off" size={50} color="black" />
-                    <Text style={stylesCalm.soundButtonText}>Som desligado</Text>
+                    <Text>Som desligado</Text>
                 </TouchableOpacity>
             </View>
-            <View >
-                <TouchableOpacity style={stylesCalm.touchableButton} onPress={navigateRespirate} >
-                    <Text style={stylesCalm.buttonText}>Começar</Text>
-                </TouchableOpacity>
-            </View>
+            <Button text="Iniciar" onPress={navigateRespirate} style={stylesIns.button}/>
             <View style={{flex: 1}}></View>
         </View>
     );
-
-
 }
 
-const stylesCalm = StyleSheet.create({
-    stepsContainer: {
-        alignItems: 'flex-start',
-        marginBottom: 20,
-    },
-    card: {
-        borderWidth: 1,
-        borderColor: '#1f1f1f',
-        borderRadius: 8,
-        width: 230,
-        marginBottom: 20,
-        padding: 16,
-        backgroundColor: '#E0E0E0',
-        
-    },
-    touchableButton: {
-        backgroundColor: '#00ff91',
-        borderRadius: 8,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 260,
-        height: 60,
-        marginTop: 50
-    },
-    buttonText: {
-        color: '#FFFFFF',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    soundButtonsContainer: {
+const stylesIns = StyleSheet.create({
+    buttonSoundContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        alignItems: 'center'
     },
-    button: {
-        alignItems: 'center',
+    buttonSound: {
         flex: 1,
-        
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 100,
     },
-    selectedButton: {
+    selectedButtonSound: {
         backgroundColor: 'lightblue',
         borderRadius: 8,
     },
+    button: {
+        width: 260,
+        height: 60,
+        marginTop: 50,
+        backgroundColor: "#50C878"
+    }
 });

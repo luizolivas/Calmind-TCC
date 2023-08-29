@@ -7,6 +7,7 @@ import { Audio } from 'expo-av';
 // Importando os estilos do arquivo styles.js
 import { styles } from '../../utils/styles';
 import { BackButton } from '../../components/BackButton/BackButton';
+import { Button } from '../../components/Button/Button';
 
 export function FourSevenEightScreen() {
 
@@ -77,7 +78,6 @@ export function FourSevenEightScreen() {
             if (currentTime === 5 && circleColor == 'lightblue') {
                 setCurrentTime(1)
                 setCircleColor('green');
-
             }
             else if (currentTime === 8 && circleColor == 'green') {
                 setCurrentTime(1)
@@ -119,25 +119,22 @@ export function FourSevenEightScreen() {
 
     return (
         <View style={styles.container}>
-            <Text>{isSoundOn ? 'Som Ativo' : 'Som mutado'}</Text>
+            <BackButton />
+            <View style={{ flex: 1 }}></View>
+            <Text>{isSoundOn ? 'Som Ativo' : 'Som Mutado'}</Text>
             {/* Renderiza a contagem regressiva ou o número de ciclos */}
             {countdown > 0 ? (
                 <Text style={styles.title}>Começando em: {countdown}</Text>
             ) : (
                 <Text style={styles.title}>
-                    Ciclos de respirações realizados: {counterCicles}
+                    Ciclos respiratórios realizados: {counterCicles}
                 </Text>
             )}
             {/* Renderiza o círculo colorido */}
             <View style={[stylesFourSevenEight.circle, { backgroundColor: circleColor }]}>
                 <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
             </View>
-            <View >
-                <TouchableOpacity style={stylesFourSevenEight.touchableButton} onPress={goBack} >
-                    <Text style={stylesFourSevenEight.buttonText}>Parar</Text>
-                </TouchableOpacity>
-            </View>
-
+            <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button}/>
             <View style={{ flex: 1 }}></View>
         </View>
     );
@@ -148,36 +145,23 @@ const stylesFourSevenEight = StyleSheet.create({
         fontSize: 40,
         marginBottom: 20,
     },
-    buttonText: {
-        fontSize: 20,
-        marginTop: 10,
-    },
     circleText: {
         fontSize: 100,
         fontWeight: 'bold',
         color: 'white',
     },
     circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 75,
+        width: 200,
+        height: 200,
+        borderRadius: 100,
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
     },
-    touchableButton: {
-        backgroundColor: '#ff0000',
-        borderRadius: 75,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
+    button: {
+        backgroundColor: 'red',
         width: 150,
         height: 60,
         marginTop: 50
-    },
-    buttonText: {
-        color: '#FFFFFF',
-        fontSize: 26,
-        fontWeight: 'bold',
     },
 });

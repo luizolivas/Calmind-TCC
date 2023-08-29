@@ -20,7 +20,7 @@ import { FourSevenEightScreen } from './routes/respirations/FourSevenEightScreen
 import { PranayamaScreen } from './routes/respirations/PranayamaScreen';
 
 // Respirations Instructions
-import { InsFourSevenEightScreen } from './routes/instructions calm/InsFourSevenEightScreen';
+import { InsFourSevenEightScreen } from './routes/instructions-calm/InsFourSevenEightScreen';
 
 // Selfcares
 import { Sofrology } from './routes/selfcares/Sofrology';

@@ -125,16 +125,16 @@ const stylesHome = StyleSheet.create({
         flex: 1,
         padding: 10
     },
-      contentSectionContainer: {
+    contentSectionContainer: {
         flex: 1,
         alignItems: 'center'
     },
-      helpContainer: {
+    helpContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
     },
-      contentHelpContainer: {
+    contentHelpContainer: {
         flex: 1,
         alignItems: 'center'
     }
