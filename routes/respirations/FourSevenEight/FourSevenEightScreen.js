@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, BackHandler } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing } from 'react-native';
 import { useState, useEffect } from 'react';
 
 import { styles } from '../../../utils/styles';
@@ -23,6 +23,7 @@ export function FourSevenEightScreen() {
     const [countdown, setCountdown] = useState(3);
     const [isSoundPlaying, setIsSoundPlaying] = useState(false); // Estado para rastrear se o som está tocando
     const [instruction, setInstruction] = useState('Inspire: Respire pelo nariz por 4 segundos.')
+    const [circleScaleAnimated] = useState(new Animated.Value(1.0));
 
     const route = useRoute();
     const { isSoundOn } = route.params;
@@ -69,6 +70,15 @@ export function FourSevenEightScreen() {
         };
     }, [navigation]);
 
+    const animateCircleScale = (toValue, time) => {
+        Animated.timing(circleScaleAnimated, {
+            toValue: toValue,
+            duration: time, // Duração da animação em milissegundos
+            easing: Easing.linear,
+            useNativeDriver: false,
+        }).start();
+    };
+
     // Efeito que controla o cronômetro
     useEffect(() => {
         let interval;
@@ -78,29 +88,32 @@ export function FourSevenEightScreen() {
                 setCurrentTime((prevTime) => prevTime + 1);
             }, 1000);
             if (currentTime === 5 && circleColor == 'lightblue') {
-                setCurrentTime(1)
-                setInstruction('Prenda: Segure a respiração por 7 segundos.')
+                setCurrentTime(1);
+                setInstruction('Prenda: Segure a respiração por 7 segundos.');
                 setCircleColor('green');
+                animateCircleScale(1.2); // Iniciar animação para aumentar o tamanho
             }
             else if (currentTime === 8 && circleColor == 'green') {
-                setCurrentTime(1)
-                setInstruction('Expire: Solte o ar pela boca por 8 segundos.')
+                setCurrentTime(1);
+                setInstruction('Expire: Solte o ar pela boca por 8 segundos.');
                 setCircleColor('red');
+                animateCircleScale(0.8, 8000); // Iniciar animação para diminuir o tamanho
             }
             else if (currentTime === 9 && circleColor == 'red') {
-                setCurrentTime(0)
-                setCounterCicles(counterCicles + 1)
-                setInstruction('Inspire: Respire pelo nariz por 4 segundos.')
+                setCurrentTime(0);
+                setCounterCicles(counterCicles + 1);
+                setInstruction('Inspire: Respire pelo nariz por 4 segundos.');
                 setCircleColor('lightblue');
+                animateCircleScale(1.2,4000); // Iniciar animação para retornar ao tamanho original
             }
         } else {
             clearInterval(interval);
         }
-
+    
         return () => {
             clearInterval(interval);
         };
-    }, [isStopwatchStart, currentTime]);
+    }, [isStopwatchStart, currentTime ]);
 
     // Efeito para controlar a contagem regressiva
     useEffect(() => {
@@ -113,6 +126,7 @@ export function FourSevenEightScreen() {
             return () => clearTimeout(timeout);
         } else if (!isStopwatchStart && countdown === 0) {
             setIsStopwatchStart(true);
+            animateCircleScale(1.2,4000)
         }
 
     }, [isStopwatchStart, countdown]);
@@ -121,6 +135,7 @@ export function FourSevenEightScreen() {
         stopSound(); // Pare o som
         navigation.goBack(); // Volte para a tela anterior
     }
+
 
     return (
         <View style={styles.container}>
@@ -134,9 +149,13 @@ export function FourSevenEightScreen() {
                 </Text>
             )}
             {/* Renderiza o círculo colorido */}
-            <View style={[stylesFourSevenEight.circle, { backgroundColor: circleColor }]}>
+            <Animated.View
+                style={[
+                    stylesFourSevenEight.circle,
+                    { backgroundColor: circleColor, transform: [{ scale: circleScaleAnimated }] },
+                ]}>
                 <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
-            </View>
+            </Animated.View>
 
             <View style={stylesFourSevenEight.instructionsContainer}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
@@ -167,12 +186,13 @@ const stylesFourSevenEight = StyleSheet.create({
         color: 'white',
     },
     circle: {
-        width: 200,
-        height: 200,
+        width: 150,
+        height: 150,
         borderRadius: 100,
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 5
     },
     button: {
         backgroundColor: 'red',
