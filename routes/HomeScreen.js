@@ -86,33 +86,33 @@ export function HomeScreen() {
             <Text style={{fontSize: 12.5, fontStyle: 'italic'}}>- {author}</Text>
             <View style={stylesHome.sectionContainer}>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
-                    <Icon name="leanpub" size={35} color={"black"} />
+                    <Icon name="leanpub" size={35} color={"#DB8946"} />
                     <Text>Aprenda sobre Ansiedade</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
-                    <Icon name="music" size={35} color={"black"} />
+                    <Icon name="music" size={35} color={"#B34BD6"} />
                     <Text>Relaxamento Sonoro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
-                    <Icon name="headphones" size={35} color={"black"} />
+                    <Icon name="headphones" size={35} color={"#4441F2"} />
                     <Text>Podcasts</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
-                    <Icon name="heartbeat" size={35} color={"black"} />
+                    <Icon name="leaf" size={35} color={"#50C878"} />
                     <Text>Acalme-se</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
-                    <Icon name="medkit" size={35} color={"black"} />
+                    <Icon name="medkit" size={35} color={"#D22B2B"} />
                     <Text>Autocuidados</Text>
                 </TouchableOpacity>
             </View>
             <View style={stylesHome.helpContainer}>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Help")}>
-                    <Icon name="question-circle" size={35} color={"black"} />
+                    <Icon name="question-circle" size={35} color={"#242423"} />
                     <Text>Ajuda</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
-                    <Icon name="comments" size={35} color={"black"} />
+                    <Icon name="comments" size={35} color={"#B2BEB5"} />
                     <Text>Conversar</Text>
                 </TouchableOpacity>
             </View>

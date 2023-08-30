@@ -36,6 +36,7 @@ const stylesCard = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         borderBottomWidth: 1,
+        paddingBottom: 8,
         textAlign: 'center'
     },
     recomendation: {

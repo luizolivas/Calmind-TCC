@@ -52,7 +52,7 @@ export function AnxietyScreen() {
         <View style={styles.container}>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="leanpub" size={100} color={"black"} />
+                <Icon style={styles.icon} name="leanpub" size={100} color={"#DB8946"} />
                 <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
                 <Text style={styles.description}>
                     Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.

@@ -64,7 +64,7 @@ export function SoundScreen() {
         <View style={styles.container}>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="music" size={100} color={"black"} />
+                <Icon style={styles.icon} name="music" size={100} color={"#B34BD6"} />
                 <Text style={styles.title}>Relaxamento Sonoro</Text>
                 <Text style={styles.description}>
                     Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
