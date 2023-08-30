@@ -16,7 +16,7 @@ export function SelfcareScreen() {
         <View style={styles.container}>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="medkit" size={100} color={"black"} />
+                <Icon style={styles.icon} name="medkit" size={100} color={"#D22B2B"} />
                 <Text style={styles.title}>Autocuidados</Text>
                 <Text style={styles.description}>
                     Priorize seu bem-estar com nossas práticas de autocuidado.

@@ -16,7 +16,7 @@ export function CalmScreen() {
         <View style={styles.container}>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="leaf" size={100} color={"black"} />
+                <Icon style={styles.icon} name="leaf" size={100} color={"#50C878"} />
                 <Text style={styles.title}>Acalme-se</Text>
                 <Text style={styles.description}>
                     Aprenda técnicas de respiração para acalmar a mente e encontrar tranquilidade. Descubra recomendações para suas necessidades.
