@@ -30,10 +30,6 @@ export function CalmScreen() {
                         <CardRecomendation text="Foco" bgColor="#7393B3" />
                         <CardRecomendation text="Relaxamento" bgColor="#7393B3" />
                     </CardView>
-                    <CardView title="Respiração do Fogo (Mente Brilhante)" navigate="Fire" bgColor='#B2BEB5'>
-                        <CardRecomendation text="Foco" bgColor="#7393B3" />
-                        <CardRecomendation text="Relaxamento" bgColor="#7393B3" />
-                    </CardView>
                     <CardView title="Respiração das Narinas Alternadas (Nadi Shodhan Pranayama)" navigate="PranayamaInfo" bgColor='#B2BEB5'>
                         <CardRecomendation text="Foco" bgColor="#7393B3" />
                         <CardRecomendation text="Relaxamento" bgColor="#7393B3" />
