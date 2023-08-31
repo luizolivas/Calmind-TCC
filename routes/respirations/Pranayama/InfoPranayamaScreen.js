@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -18,7 +18,12 @@ export function InfoPranayamaScreen() {
     const navigation = useNavigation();
 
     const navigateRespirate = () => {
-        navigation.navigate('FourSevenEight');
+        navigation.navigate('Pranayama');
+    };
+
+    const handleLinkPress = () => {
+        const videoUrl = 'https://www.youtube.com/watch?v=SEd3eMfp75E'; // Substitua pela URL do seu vídeo no YouTube
+        Linking.openURL(videoUrl);
     };
 
     return (
@@ -26,14 +31,20 @@ export function InfoPranayamaScreen() {
             <BackButton />
             <Text style={styles.title}>Respiração das Narinas Alternadas (Nadi Shodhan Pranayama)</Text>
             <Text style={styles.description}>
-                A respiração das narinas alternadas é uma técnica de respiração que visa equilibrar a energia do corpo, acalmar a mente e melhorar a concentração. 
+                A respiração das narinas alternadas é uma técnica de respiração que visa equilibrar a energia do corpo, acalmar a mente e melhorar a concentração.
             </Text>
             <View>
                 <Image
                     style={{ width: 100, height: 100 }} // Defina os valores de largura e altura desejados
-                    
+
                 />
             </View>
+            <View>
+                <TouchableOpacity onPress={handleLinkPress}>
+                    <Text style={stylesinfoPranayama.linkText}>Preciso de ajuda com essa respiração</Text>
+                </TouchableOpacity>
+            </View>
+
             <Button text="Iniciar" onPress={navigateRespirate} style={stylesinfoPranayama.button} />
             <View style={{ flex: 1 }}></View>
         </View>
@@ -54,5 +65,9 @@ const stylesinfoPranayama = StyleSheet.create({
     },
     imagee: {
 
-    }
+    },
+    linkText: {
+        color: 'blue',
+        textDecorationLine: 'underline',
+    },
 });
