@@ -28,6 +28,9 @@ import { Sofrology } from './routes/selfcares/Sofrology/Sofrology';
 import { Automassage } from './routes/selfcares/Automassage/Automassage';
 import { Harmonization } from './routes/selfcares/Harmonization/Harmonization';
 
+// Selfcares Action
+import { SofrologyAct } from './routes/selfcares/Sofrology/SofrologyAct';
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -49,6 +52,7 @@ export default function App() {
         <Stack.Screen name="Sofrology" component={Sofrology} />
         <Stack.Screen name="Automassage" component={Automassage} />
         <Stack.Screen name="Harmonization" component={Harmonization} />
+        <Stack.Screen name="SofrologyAct" component={SofrologyAct} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -23,7 +23,7 @@ export function SelfcareScreen() {
                 </Text>
                 <View style={styles.containerCards}>
                     <CardView title="Sofrologia" navigate="Sofrology" bgColor='#E1C16E'>
-                        <CardRecomendation text="Fluxo Sanguíneo" bgColor="#DAA06D" />
+                        <CardRecomendation text="Relaxamento Geral" bgColor="#DAA06D" />
                     </CardView>
                     <CardView title="Automassagem" navigate="Automassage" bgColor='#E1C16E'>
                         <CardRecomendation text="Relaxamento Muscular" bgColor="#DAA06D" />
