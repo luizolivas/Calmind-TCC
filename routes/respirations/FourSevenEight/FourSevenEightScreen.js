@@ -136,7 +136,6 @@ export function FourSevenEightScreen() {
         navigation.goBack(); // Volte para a tela anterior
     }
 
-
     return (
         <View style={styles.container}>
             <View style={{ flex: 1 }}></View>
@@ -165,10 +164,9 @@ export function FourSevenEightScreen() {
                     <Text style={styles.description}>{instruction}</Text>
                 )}
                 <View >
-                    <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button} />
+                    <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
             </View>
-
 
             <View style={{ flex: 1 }}></View>
         </View>
@@ -193,12 +191,6 @@ const stylesFourSevenEight = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 5
-    },
-    button: {
-        backgroundColor: 'red',
-        width: 150,
-        height: 60,
-        marginTop: 50
     },
     instructionsContainer: {
         alignItems: 'center',

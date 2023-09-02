@@ -43,5 +43,12 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    // Button back
+    buttonGoBack: {
+        backgroundColor: 'red',
+        width: 150,
+        height: 60,
+        marginTop: 50,
+    },
 });
   
