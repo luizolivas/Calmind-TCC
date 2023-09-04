@@ -20,7 +20,7 @@ export function PranayamaScreen() {
     const [circleColor, setCircleColor] = useState('lightblue');
     const [counterCicles, setCounterCicles] = useState(0);
     const [countdown, setCountdown] = useState(3);
-    const [instruction, setInstruction] = useState('Inspire: Respire pelo nariz por 4 segundos.')
+    const [instruction, setInstruction] = useState('Inspire pela narina esquerda')
     const [circleScaleAnimated] = useState(new Animated.Value(1.0));
 
     
@@ -44,20 +44,26 @@ export function PranayamaScreen() {
             }, 1000);
             if (currentTime === 5 && circleColor == 'lightblue') {
                 setCurrentTime(1);
-                setInstruction('Prenda: Segure a respiração por 7 segundos.');
+                setInstruction('Expira pela narina direita');
                 setCircleColor('green');
-                animateCircleScale(1.2); // Iniciar animação para aumentar o tamanho
+                animateCircleScale(0.8,8000); // Iniciar animação para aumentar o tamanho
             }
-            else if (currentTime === 8 && circleColor == 'green') {
+            else if (currentTime === 9 && circleColor == 'green') {
                 setCurrentTime(1);
-                setInstruction('Expire: Solte o ar pela boca por 8 segundos.');
+                setInstruction('Inspire pela narina direita');
                 setCircleColor('red');
-                animateCircleScale(0.8, 8000); // Iniciar animação para diminuir o tamanho
+                animateCircleScale(1.2, 4000); // Iniciar animação para diminuir o tamanho
             }
-            else if (currentTime === 9 && circleColor == 'red') {
+            if (currentTime === 5 && circleColor == 'red') {
+                setCurrentTime(1);
+                setInstruction('Expira pela narina esquerda');
+                setCircleColor('blue');
+                animateCircleScale(0.8,8000); // Iniciar animação para aumentar o tamanho
+            }
+            else if (currentTime === 9 && circleColor == 'blue') {
                 setCurrentTime(0);
                 setCounterCicles(counterCicles + 1);
-                setInstruction('Inspire: Respire pelo nariz por 4 segundos.');
+                setInstruction('Inspire pela narina esquerda');
                 setCircleColor('lightblue');
                 animateCircleScale(1.2,4000); // Iniciar animação para retornar ao tamanho original
             }
