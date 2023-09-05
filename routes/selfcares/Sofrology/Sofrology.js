@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -26,18 +26,22 @@ export function Sofrology() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>Sofrologia</Text>
-            <Text style={styles.description}>
-                A Sofrologia é uma prática que combina elementos da psicologia, relaxamento e técnicas de mindfulness para promover o bem-estar mental e físico.
-            </Text>
-            <Text style={styles.description}>
-                O objetivo deste exercício é liberar a tensão muscular e alcançar um estado de relaxamento profundo.
-            </Text>
-            <Text style={styles.description}>
-                Lembrando de que a prática regular desses exercícios pode levar a benefícios crescentes ao longo do tempo. Se possível, experimente diferentes variações e durações para descobrir o que funciona melhor para você.
-            </Text>
-            <ButtonsSound onFunction={on} offFunction={mute} />
-            <Button text="Iniciar" onPress={() => navigation.navigate('SofrologyAct', { isSoundOn })} style={stylesSofrology.button}/>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Text style={styles.title}>Sofrologia</Text>
+                <Text style={styles.description}>
+                    A Sofrologia é uma prática que combina elementos da psicologia, relaxamento e técnicas de mindfulness para promover o bem-estar mental e físico.
+                </Text>
+                <Text style={styles.description}>
+                    O objetivo deste exercício é liberar a tensão muscular e alcançar um estado de relaxamento profundo.
+                </Text>
+                <Text style={styles.description}>
+                    Lembrando de que a prática regular desses exercícios pode levar a benefícios crescentes ao longo do tempo. Se possível, experimente diferentes variações e durações para descobrir o que funciona melhor para você.
+                </Text>
+                <ButtonsSound onFunction={on} offFunction={mute} />
+                <View style={{alignItems: 'center'}}>
+                    <Button text="Iniciar" onPress={() => navigation.navigate('SofrologyAct', { isSoundOn })} style={stylesSofrology.button}/>
+                </View>
+            </ScrollView>
             <View style={{flex: 1}}></View>
         </View>
     );

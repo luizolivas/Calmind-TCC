@@ -1,23 +1,14 @@
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 export function StepByStep({ list }) {
-
-    const renderItem = ({ item, index }) => {
-        return (
-            <View style={stylesSteps.step}>
-                <Text style={stylesSteps.stepTitle}>{`${index + 1}º Passo:`}</Text>
-                <Text style={stylesSteps.stepText}>{item}</Text>
-            </View>
-        );
-    };
-
     return (
         <View style={stylesSteps.stepsContainer}>
-            <FlatList
-                data={list}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => index.toString()}
-            />
+            {list.map((item, index) => (
+                <View key={index} style={stylesSteps.step}>
+                    <Text style={stylesSteps.stepTitle}>{`${index + 1}º Passo:`}</Text>
+                    <Text style={stylesSteps.stepText}>{item}</Text>
+                </View>
+            ))}
         </View>
     );
 }
@@ -29,7 +20,6 @@ const stylesSteps = StyleSheet.create({
         alignItems: 'center'
     },
     step: {
-        flex: 1,
         marginVertical: 10
     },
     stepTitle: {
