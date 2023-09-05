@@ -17,7 +17,7 @@ const stylesSteps = StyleSheet.create({
     stepsContainer: {
         flex: 1,
         justifyContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'flex-start'
     },
     step: {
         marginVertical: 10
