@@ -28,10 +28,6 @@ export function SelfcareScreen() {
                     <CardView title="Automassagem" navigate="Automassage" bgColor='#E1C16E'>
                         <CardRecomendation text="Relaxamento Muscular" bgColor="#DAA06D" />
                     </CardView>
-                    <CardView title="Harmonizaçãpo dos Chakras" navigate="Harmonization" bgColor='#E1C16E'>
-                        <CardRecomendation text="Foco" bgColor="#DAA06D" />
-                        <CardRecomendation text="Sono" bgColor="#DAA06D" />
-                    </CardView>
                 </View>
             </ScrollView>
         </View>

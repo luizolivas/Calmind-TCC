@@ -11,6 +11,7 @@ import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
 
 export function Sofrology() {
+
     const [isSoundOn, setIsSoundOn] = useState(true);
 
     const navigation = useNavigation();
@@ -38,11 +39,10 @@ export function Sofrology() {
                     Lembrando de que a prática regular desses exercícios pode levar a benefícios crescentes ao longo do tempo. Se possível, experimente diferentes variações e durações para descobrir o que funciona melhor para você.
                 </Text>
                 <ButtonsSound onFunction={on} offFunction={mute} />
-                <View style={{alignItems: 'center'}}>
+                <View style={{ alignItems: 'center' }}>
                     <Button text="Iniciar" onPress={() => navigation.navigate('SofrologyAct', { isSoundOn })} style={stylesSofrology.button}/>
                 </View>
             </ScrollView>
-            <View style={{flex: 1}}></View>
         </View>
     );
 }

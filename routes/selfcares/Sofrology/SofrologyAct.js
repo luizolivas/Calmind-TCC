@@ -75,11 +75,11 @@ export function SofrologyAct() {
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <Text style={styles.title}>Relaxamento Progressivo</Text>
-            <StepByStep list={listOfSteps} />
-            <View style={{alignItems: 'center'}}>
-                <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
-            </View>
+                <Text style={styles.title}>Relaxamento Progressivo</Text>
+                <StepByStep list={listOfSteps} />
+                <View style={{alignItems: 'center'}}>
+                    <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
+                </View>
             </ScrollView>
         </View>
     );
