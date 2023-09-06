@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, BackHandler, Animated, Easing } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
 import { useState, useEffect } from 'react';
 
 import { styles } from '../../../utils/styles';
@@ -152,7 +152,17 @@ const stylesFourSevenEight = StyleSheet.create({
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 5
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
     },
     button: {
         backgroundColor: 'red',

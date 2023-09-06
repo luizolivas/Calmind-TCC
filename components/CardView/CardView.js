@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../Button/Button";
@@ -29,7 +29,17 @@ const stylesCard = StyleSheet.create({
         width: 230,
         marginBottom: 20,
         padding: 16,
-        elevation: 5
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
     },
     title: {
         color: 'white',

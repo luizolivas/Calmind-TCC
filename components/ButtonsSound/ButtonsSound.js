@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { useState } from 'react';
 
 // Icons in https://fontawesome.com/v4/icons/
@@ -47,6 +47,16 @@ const stylesButtonSound = StyleSheet.create({
     selectedButtonSound: {
         backgroundColor: 'lightblue',
         borderRadius: 8,
-        elevation: 5
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
     },
 })

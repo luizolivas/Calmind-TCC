@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, Platform } from "react-native";
 
 export function Button({ text, onPress, style }) {
     return (
@@ -14,7 +14,17 @@ const stylesButton = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 5
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
     },
     buttonText: {
         color: '#FFFFFF',
