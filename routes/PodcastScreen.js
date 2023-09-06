@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
@@ -16,6 +16,7 @@ import { VideoList } from "../components/VideoList/VideoList";
 
 export function PodcastScreen() {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
@@ -34,12 +35,16 @@ export function PodcastScreen() {
 
                     await AsyncStorage.setItem('lastVideosPodcast', JSON.stringify(podcastVideos));
                     await AsyncStorage.setItem('lastFetchedDatePodcast', currentDate);
+
+                    setIsLoading(false);
                 }
             } else {
                 // Define a last res API
                 const podcastVideos = await AsyncStorage.getItem('lastVideosPodcast');
 
                 setVideos(JSON.parse(podcastVideos));
+
+                setIsLoading(false);
             }
         }
 
@@ -50,21 +55,22 @@ export function PodcastScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="headphones" size={100} color={"#4441F2"} />
-                <Text style={styles.title}>Podcasts</Text>
-                <Text style={styles.description}>
-                    Confira alguns dos podcasts mais recomendados abaixo:
-                </Text>
-                <View>
-                    {videos ? (
-                        <VideoList videos={videos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-            </ScrollView>
+            {isLoading ? (
+                <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
+            ) : (
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <Icon style={styles.icon} name="headphones" size={100} color={"#4441F2"} />
+                    <Text style={styles.title}>Podcasts</Text>
+                    <Text style={styles.description}>
+                        Confira alguns dos podcasts mais recomendados abaixo:
+                    </Text>
+                    <View>
+                        {videos && (
+                            <VideoList videos={videos} />
+                        )}
+                    </View>
+                </ScrollView>
+            )}
         </View>
     );
 }

@@ -1,4 +1,4 @@
-import { View, Text, ScrollView  } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator  } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
@@ -15,6 +15,8 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
 
 export function SoundScreen() {
+
+    const [isLoading, setIsLoading] = useState(true);
 
     const [lofiVideos, setlofiVideos] = useState([]);
     const [meditationVideos, setmeditationVideos] = useState([]);
@@ -42,6 +44,8 @@ export function SoundScreen() {
                     await AsyncStorage.setItem('lastVideosMeditation', JSON.stringify(meditationVideosData));
                     await AsyncStorage.setItem('lastVideosSpecial', JSON.stringify(specialVideosData));
                     await AsyncStorage.setItem('lastFetchedDateSound', currentDate);
+
+                    setIsLoading(false);
                 }
             } else {
                 // Define a last res API
@@ -52,6 +56,8 @@ export function SoundScreen() {
                 setlofiVideos(JSON.parse(lofiVideosData));
                 setmeditationVideos(JSON.parse(meditationVideosData));
                 setspecialVideos(JSON.parse(specialVideosData));
+
+                setIsLoading(false);
             }
 
         }
@@ -63,36 +69,31 @@ export function SoundScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="music" size={100} color={"#B34BD6"} />
-                <Text style={styles.title}>Relaxamento Sonoro</Text>
-                <Text style={styles.description}>
-                    Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
-                </Text>
-                <View>
-                    <Text style={styles.videoTitle}>Lo-fi</Text>
-                    {lofiVideos ? (
-                        <VideoList videos={lofiVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                    <Text style={styles.videoTitle}>Meditação</Text>
-                    {meditationVideos ? (
-                        <VideoList videos={meditationVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                    <Text style={styles.videoTitle}>432hz</Text>
-                    {specialVideos ? (
-                        <VideoList videos={specialVideos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-            </ScrollView>
+            {isLoading ? (
+                <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
+            ) : (
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <Icon style={styles.icon} name="music" size={100} color={"#B34BD6"} />
+                    <Text style={styles.title}>Relaxamento Sonoro</Text>
+                    <Text style={styles.description}>
+                        Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
+                    </Text>
+                    <View>
+                        <Text style={styles.videoTitle}>Lo-fi</Text>
+                        {lofiVideos && (
+                            <VideoList videos={lofiVideos} />
+                        )}
+                        <Text style={styles.videoTitle}>Meditação</Text>
+                        {meditationVideos && (
+                            <VideoList videos={meditationVideos} />
+                        )}
+                        <Text style={styles.videoTitle}>432hz</Text>
+                        {specialVideos && (
+                            <VideoList videos={specialVideos} />
+                        )}
+                    </View>
+                </ScrollView>
+            )}
         </View>
     );
 }

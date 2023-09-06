@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator } from "react-native";
 import { useEffect, useState } from 'react';
 
 // Utils
@@ -17,6 +17,7 @@ import { VideoList } from "../components/VideoList/VideoList";
 
 export function AnxietyScreen() {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
@@ -35,12 +36,16 @@ export function AnxietyScreen() {
 
                     await AsyncStorage.setItem('lastVideosAnxiety', JSON.stringify(anxietyVideos));
                     await AsyncStorage.setItem('lastFetchedDateAnxiety', currentDate);
+                    
+                    setIsLoading(false);
                 }
             } else {
                 // Define a last res API
                 const anxietyVideos = await AsyncStorage.getItem('lastVideosAnxiety');
 
                 setVideos(JSON.parse(anxietyVideos));
+                
+                setIsLoading(false);
             }
         }
 
@@ -51,21 +56,22 @@ export function AnxietyScreen() {
     return (
         <View style={styles.container}>
             <BackButton />
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="leanpub" size={100} color={"#DB8946"} />
-                <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
-                <Text style={styles.description}>
-                    Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.
-                </Text>
-                <View>
-                    {videos ? (
-                        <VideoList videos={videos} />
-                    )
-                    : (
-                        <Text style={{flex: 1, marginTop: 50}}>Carregando vídeos...</Text>
-                    )}
-                </View>
-            </ScrollView>
+            {isLoading ? (
+                <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
+            ) : (
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <Icon style={styles.icon} name="leanpub" size={100} color={"#DB8946"} />
+                    <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
+                    <Text style={styles.description}>
+                        Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.
+                    </Text>
+                    <View>
+                        {videos && (
+                            <VideoList videos={videos} />
+                        )}
+                    </View>
+                </ScrollView>
+            )}
         </View>
     );
 }
