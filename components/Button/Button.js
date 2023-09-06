@@ -29,6 +29,6 @@ const stylesButton = StyleSheet.create({
     buttonText: {
         color: '#FFFFFF',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontFamily: 'Roboto_700Bold',
     },
 })

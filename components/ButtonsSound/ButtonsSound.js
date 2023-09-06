@@ -22,11 +22,11 @@ export function ButtonsSound({ onFunction, offFunction }) {
         <View style={stylesButtonSound.buttonSoundContainer}>
             <TouchableOpacity onPress={onFunctionHandler} style={[stylesButtonSound.buttonSound, isSoundOn && stylesButtonSound.selectedButtonSound]}>
                 <Icon name="volume-up" size={50} color="black" />
-                <Text >Som Ligado</Text>
+                <Text style={{ fontFamily: 'Roboto_500Medium' }}>Som Ligado</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={offFunctionHandler} style={[stylesButtonSound.buttonSound, !isSoundOn && stylesButtonSound.selectedButtonSound]}>
                 <Icon name="volume-off" size={50} color="black" />
-                <Text>Som Desligado</Text>
+                <Text style={{ fontFamily: 'Roboto_500Medium' }}>Som Desligado</Text>
             </TouchableOpacity>
         </View>
     );

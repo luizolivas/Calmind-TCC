@@ -82,38 +82,38 @@ export function HomeScreen() {
     return (
         <View style={styles.container}>
             <ImageLogo />
-            <Text style={{fontSize: 12.5, fontWeight: 500}}>'{quote}'</Text>
-            <Text style={{fontSize: 12.5, fontStyle: 'italic'}}>- {author}</Text>
+            <Text style={{fontSize: 12.5, fontFamily: 'Roboto_500Medium'}}>'{quote}'</Text>
+            <Text style={{fontSize: 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic'}}>- {author}</Text>
             <View style={stylesHome.sectionContainer}>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
                     <Icon name="leanpub" size={35} color={"#DB8946"} />
-                    <Text>Aprenda sobre Ansiedade</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Aprenda sobre Ansiedade</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
                     <Icon name="music" size={35} color={"#B34BD6"} />
-                    <Text>Relaxamento Sonoro</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Relaxamento Sonoro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
                     <Icon name="headphones" size={35} color={"#4441F2"} />
-                    <Text>Podcasts</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Podcasts</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
                     <Icon name="leaf" size={35} color={"#50C878"} />
-                    <Text>Acalme-se</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Acalme-se</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
                     <Icon name="medkit" size={35} color={"#D22B2B"} />
-                    <Text>Autocuidados</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Autocuidados</Text>
                 </TouchableOpacity>
             </View>
             <View style={stylesHome.helpContainer}>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Help")}>
                     <Icon name="question-circle" size={35} color={"#242423"} />
-                    <Text>Ajuda</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Ajuda</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
                     <Icon name="comments" size={35} color={"#B2BEB5"} />
-                    <Text>Conversar</Text>
+                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Conversar</Text>
                 </TouchableOpacity>
             </View>
         </View>

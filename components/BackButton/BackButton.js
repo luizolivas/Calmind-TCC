@@ -16,7 +16,7 @@ export function BackButton() {
     return (
         <View style={styles.backContainer}>
             <TouchableOpacity onPress={goBack}>
-                <Icon name="arrow-left" size={40} color={"black"} />
+                <Icon name="arrow-left" size={35} color={"black"} />
             </TouchableOpacity>
             <TouchableOpacity onPress={goBack} style={styles.backButtonText}>
                 <Text>Voltar</Text>
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     },
     backButtonText: {
         fontSize: 20,
-        marginLeft: 10, 
+        fontFamily: 'Roboto_500Medium',
+        marginLeft: 10
     }
 });
   

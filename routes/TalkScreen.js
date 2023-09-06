@@ -29,7 +29,7 @@ export function TalkScreen() {
             <View style={stylesTalk.buttonContainer}>
                 <TouchableOpacity onPress={openChat} style={stylesTalk.button}>
                     <Icon name="comments-o" size={90} color={"black"} />
-                    <Text style={styles.description}>Chat online</Text>
+                    <Text style={styles.description}>Chat Online</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={openCall} style={stylesTalk.button}>
                     <Icon name="phone-square" size={90} color={"black"} />

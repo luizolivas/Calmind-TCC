@@ -15,7 +15,7 @@ export function CardView({ children, title, navigate, bgColor }) {
                 <View style={stylesCard.cardContentContainer}>
                     {children} 
                 </View>
-                <Button text="Escolher" onPress={() => navigation.navigate(navigate)} style={{backgroundColor: "#50C878", marginTop: 5}} />
+                <Button text="Escolher" onPress={() => navigation.navigate(navigate)} style={{ backgroundColor: "#50C878", marginTop: 5 }} />
             </View>
         </View>
     );
@@ -52,6 +52,7 @@ const stylesCard = StyleSheet.create({
     recomendation: {
         color: 'white',
         fontSize: 14,
+        fontFamily: 'Roboto_500Medium',
         fontWeight: 'bold',
         textAlign: 'center',
         marginVertical: 5

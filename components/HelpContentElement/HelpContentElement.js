@@ -33,13 +33,14 @@ const stylesHelpContent = StyleSheet.create({
     contentTitle: {
         textAlign: 'center',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontFamily: 'Roboto_700Bold',
         marginTop: 5
     },
     contentDescription: {
         flex: 1,
         textAlign: 'center',
         marginTop: 10,
+        fontFamily: 'Roboto_400Regular',
         fontSize: 16
     }
 })

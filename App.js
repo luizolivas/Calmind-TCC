@@ -34,7 +34,23 @@ import { HandMassage } from './routes/selfcares/Automassage/massages/HandMassage
 import { ChestMassage } from './routes/selfcares/Automassage/massages/ChestMassage';
 import { HairMassage } from './routes/selfcares/Automassage/massages/HairMassage';
 
+// Fonts
+import { Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@expo-google-fonts/roboto";
+import { useFonts } from "expo-font";
+
 export default function App() {
+
+  // Font
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold
+  })
+
+  if (!fontsLoaded) {
+      return null
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='Home'>

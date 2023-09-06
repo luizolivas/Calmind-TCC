@@ -10,12 +10,13 @@ export const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
+        fontFamily: 'Roboto_700Bold',
         fontSize: 24,
-        fontWeight: 'bold',
         marginVertical: 20
     },
     description: {
         textAlign: 'center',
+        fontFamily: 'Roboto_400Regular',
         fontSize: 18,
         marginTop: 10,
         marginBottom: 20
@@ -30,6 +31,7 @@ export const styles = StyleSheet.create({
     },
     videoTitle: {
         textAlign: 'center',
+        fontFamily: 'Roboto_500Medium',
         fontSize: 20,
         fontWeight: 'bold'
     },

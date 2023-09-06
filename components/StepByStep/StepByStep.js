@@ -24,10 +24,11 @@ const stylesSteps = StyleSheet.create({
     },
     stepTitle: {
         fontSize: 18,
-        fontWeight: 'bold',
+        fontFamily: 'Roboto_700Bold',
         marginBottom: 10
     },
     stepText: {
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: 'Roboto_400Regular'
     }
 })
