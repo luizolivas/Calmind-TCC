@@ -1,5 +1,6 @@
 import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
 import { useState, useEffect } from 'react';
+import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../utils/styles';
 
@@ -96,6 +97,21 @@ export function PranayamaScreen() {
         navigation.goBack(); // Volte para a tela anterior
     }
 
+    // Efeitos para lidar com o botão e interação de voltar e parar o som ao sair do componente
+    useEffect(() => {
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+            goBack()
+            return true;
+        });
+
+        return () => {
+            backHandler.remove();
+        };
+    }, [navigation]);
+
+    useBackHandler(() => {
+        goBack()
+    })
 
     return (
         <View style={styles.container}>

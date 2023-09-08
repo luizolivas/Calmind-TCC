@@ -1,5 +1,6 @@
 import { Text, View, ScrollView, BackHandler } from 'react-native';
 import { useState, useEffect } from 'react';
+import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../../utils/styles';
 
@@ -54,11 +55,10 @@ export function HandMassage() {
         }
     }, [])
 
-    // Efeito para lidar com o botão de voltar e parar o som ao sair do componente
+    // Efeitos para lidar com o botão e interação de voltar e parar o som ao sair do componente
     useEffect(() => {
         const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            stopSound();
-            navigation.goBack();
+            goBack()
             return true;
         });
 
@@ -66,6 +66,10 @@ export function HandMassage() {
             backHandler.remove();
         };
     }, [navigation]);
+
+    useBackHandler(() => {
+        goBack()
+    })
 
     return (
         <View style={styles.container}>

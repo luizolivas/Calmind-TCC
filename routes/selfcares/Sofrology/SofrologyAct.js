@@ -1,5 +1,6 @@
 import { Text, View, ScrollView, BackHandler } from 'react-native';
 import { useState, useEffect } from 'react';
+import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../utils/styles';
 
@@ -20,7 +21,7 @@ export function SofrologyAct() {
     const listOfSteps = [
         'Encontre um local tranquilo e confortável para se sentar ou deitar.',
         'Feche os olhos e comece a focar na sua respiração, fazendo algumas respirações profundas.',
-        'Comece pelo grupo muscular dos pés: contraia os músculos dos dedos dos pés e dos pés, segurando a tensão por alguns segundos.',
+        'Comece pelo grupo muscular dos pés: contraia os músculos dos dedos dos pés, segurando a tensão por alguns segundos.',
         'Em seguida, relaxe completamente os músculos dos pés, sentindo a sensação de alívio.',
         'Continue esse padrão, movendo-se gradualmente pelo corpo: pernas, abdômen, peito, costas, braços, mãos, pescoço e rosto.',
         'Contraia cada grupo muscular por alguns segundos e depois solte completamente, focando na sensação de relaxamento.',
@@ -59,11 +60,10 @@ export function SofrologyAct() {
         }
     }, [])
 
-    // Efeito para lidar com o botão de voltar e parar o som ao sair do componente
+    // Efeitos para lidar com o botão e interação de voltar e parar o som ao sair do componente
     useEffect(() => {
         const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            stopSound();
-            navigation.goBack();
+            goBack()
             return true;
         });
 
@@ -71,6 +71,10 @@ export function SofrologyAct() {
             backHandler.remove();
         };
     }, [navigation]);
+
+    useBackHandler(() => {
+        goBack()
+    })
 
     return (
         <View style={styles.container}>
