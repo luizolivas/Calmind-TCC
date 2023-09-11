@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Linking } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,10 @@ import { HairMassage } from './routes/selfcares/Automassage/massages/HairMassage
 import { Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@expo-google-fonts/roboto";
 import { useFonts } from "expo-font";
 
+// Notification
+import * as Notifications from 'expo-notifications';
+import * as notificationService from './utils/notifications';
+
 export default function App() {
 
   // Font
@@ -50,6 +55,20 @@ export default function App() {
   if (!fontsLoaded) {
       return null
   }
+
+  // Notification
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
+
+  notificationService.scheduleNotification('Lembre-se de relaxar', 'Não se esqueça de cuidar do seu bem-estar emocional. Reserve um momento para se acalmar.', 8, 30, 'Home')
+  notificationService.scheduleNotification('Respire profundamente', 'Faça uma pausa e pratique respirações profundas para aliviar o estresse.', 12, 30, 'Calm')
+  notificationService.scheduleNotification('Escute música relaxante', 'Desfrute de músicas suaves para acalmar a mente e relaxar.', 18, 30, 'Sound')
+  notificationService.scheduleNotification('Aprenda sobre ansiedade', 'Explore nossos recursos para entender melhor e lidar com a ansiedade.', 22, 0, 'Anxiety')
 
   return (
     <NavigationContainer>

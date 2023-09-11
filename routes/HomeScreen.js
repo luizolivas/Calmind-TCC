@@ -15,12 +15,18 @@ import Icon from "react-native-vector-icons/FontAwesome";
 // Components
 import { ImageLogo } from "../components/ImageLogo/ImageLogo";
 
+// Notification
+import { setupNotificationHandling } from "../utils/notifications";
+
 export function HomeScreen() {
 
     const [quote, setQuote] = useState();
     const [author, setAuthor] = useState();
 
     const navigation = useNavigation();
+
+    // Notification
+    setupNotificationHandling(navigation)
 
     // Phrase logic
     const getQuote = async () => {
