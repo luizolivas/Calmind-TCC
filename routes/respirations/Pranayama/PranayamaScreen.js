@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform, Image, ScrollView } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
@@ -6,14 +6,20 @@ import { styles } from '../../../utils/styles';
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 
-import { Audio } from 'expo-av';
+import stepOne from "../../../assets/stepOne.jpg"
+import stepTwo from "../../../assets/stepTwo.jpg"
+import hand from "../../../assets/hand.jpg"
 
 // Components
 import { Button } from '../../../components/Button/Button';
 
+
 export function PranayamaScreen() {
 
     const navigation = useNavigation();
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0); // Inicialize com a primeira imagem
+    const images = [stepOne,stepTwo]; 
 
     // Estados do componente
     const [isStopwatchStart, setIsStopwatchStart] = useState(false);
@@ -21,7 +27,7 @@ export function PranayamaScreen() {
     const [circleColor, setCircleColor] = useState('lightblue');
     const [counterCicles, setCounterCicles] = useState(0);
     const [countdown, setCountdown] = useState(3);
-    const [instruction, setInstruction] = useState('Inspire pela narina esquerda')
+    const [instruction, setInstruction] = useState('Inspire pela narina direita e bloqueie a narina esquerda')
     const [circleScaleAnimated] = useState(new Animated.Value(1.0));
 
     
@@ -43,30 +49,35 @@ export function PranayamaScreen() {
             interval = setInterval(() => {
                 setCurrentTime((prevTime) => prevTime + 1);
             }, 1000);
-            if (currentTime === 5 && circleColor == 'lightblue') {
+            if (currentTime === 4 && circleColor == 'lightblue') {
+                setCurrentImageIndex(0);
                 setCurrentTime(1);
-                setInstruction('Expira pela narina direita');
+                setInstruction('Expire pela narina direita com a narina esquerda bloqueada');
                 setCircleColor('green');
-                animateCircleScale(0.8,8000); // Iniciar animação para aumentar o tamanho
+                animateCircleScale(0.8,6000); 
+                // Iniciar animação para aumentar o tamanho
             }
-            else if (currentTime === 9 && circleColor == 'green') {
+            else if (currentTime === 7 && circleColor == 'green') {
+                setCurrentImageIndex(1);
                 setCurrentTime(1);
-                setInstruction('Inspire pela narina direita');
+                setInstruction('Inspire pela narina esquerda e bloqueie a narina direita');
                 setCircleColor('red');
-                animateCircleScale(1.2, 4000); // Iniciar animação para diminuir o tamanho
+                animateCircleScale(1.2, 3000); // Iniciar animação para diminuir o tamanho
             }
-            if (currentTime === 5 && circleColor == 'red') {
+            if (currentTime === 4 && circleColor == 'red') {
+                setCurrentImageIndex(1);
                 setCurrentTime(1);
-                setInstruction('Expira pela narina esquerda');
+                setInstruction('Expire pela esquerda direita com a narina esquerda bloqueada');
                 setCircleColor('blue');
-                animateCircleScale(0.8,8000); // Iniciar animação para aumentar o tamanho
+                animateCircleScale(0.8,6000); // Iniciar animação para aumentar o tamanho
             }
-            else if (currentTime === 9 && circleColor == 'blue') {
+            else if (currentTime === 7 && circleColor == 'blue') {
+                setCurrentImageIndex(0);
                 setCurrentTime(0);
                 setCounterCicles(counterCicles + 1);
-                setInstruction('Inspire pela narina esquerda');
+                setInstruction('Inspire pela narina direita e bloqueie a narina esquerda');
                 setCircleColor('lightblue');
-                animateCircleScale(1.2,4000); // Iniciar animação para retornar ao tamanho original
+                animateCircleScale(1.2,3000); // Iniciar animação para retornar ao tamanho original
             }
         } else {
             clearInterval(interval);
@@ -87,8 +98,9 @@ export function PranayamaScreen() {
 
             return () => clearTimeout(timeout);
         } else if (!isStopwatchStart && countdown === 0) {
+            setCurrentImageIndex(0);
             setIsStopwatchStart(true);
-            animateCircleScale(1.2,4000)
+            animateCircleScale(1.2,3000)
         }
 
     }, [isStopwatchStart, countdown]);
@@ -114,11 +126,14 @@ export function PranayamaScreen() {
     })
 
     return (
-        <View style={styles.container}>
+        <View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.container}>
+            
             <View style={{ flex: 1 }}></View>
             {/* Renderiza a contagem regressiva ou o número de ciclos */}
             {countdown > 0 ? (
-                <Text style={styles.title}>Começando em: {countdown}</Text>
+                <Text style={styles.title}> Expire todo o ar dos seus pulmões.{'\n'}Começando em: {countdown} </Text>
             ) : (
                 <Text style={styles.title}>
                     Ciclos respiratórios realizados: {counterCicles}
@@ -127,31 +142,42 @@ export function PranayamaScreen() {
             {/* Renderiza o círculo colorido */}
             <Animated.View
                 style={[
-                    stylesFourSevenEight.circle,
+                    stylesPranayama.circle,
                     { backgroundColor: circleColor, transform: [{ scale: circleScaleAnimated }] },
                 ]}>
-                <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
+                <Text style={stylesPranayama.circleText}>{currentTime}</Text>
             </Animated.View>
 
-            <View style={stylesFourSevenEight.instructionsContainer}>
+            <View style={stylesPranayama.instructionsContainer}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
                 {countdown > 0 ? (
                     <Text></Text>
                 ) : (
                     <Text style={styles.description}>{instruction}</Text>
                 )}
+                    <View style={stylesPranayama.container}>
+                        <Image source={images[currentImageIndex]} style={{ width: 250, height: 150 }} />
+                        <View style={stylesPranayama.innerCard}> 
+                            <Image source={hand} style={{ width: 200, height: 200 }} />
+                        </View>
+
+                    </View>
                 <View >
-                    <Button text="Encerrar" onPress={goBack} style={stylesFourSevenEight.button} />
+                    <Button text="Encerrar" onPress={goBack} style={stylesPranayama.button} />
                 </View>
             </View>
 
 
             <View style={{ flex: 1 }}></View>
         </View>
+        </ScrollView>
+        </View>
+        
+        
     );
 }
 
-const stylesFourSevenEight = StyleSheet.create({
+const stylesPranayama = StyleSheet.create({
     secondsText: {
         fontSize: 40,
         marginBottom: 20,
@@ -191,4 +217,17 @@ const stylesFourSevenEight = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: 20,
     },
+    innerCard: {
+        borderRadius: 10,
+
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      container: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 3,
+        borderWidth: 1, 
+      },
 });
