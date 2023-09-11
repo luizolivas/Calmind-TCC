@@ -20,14 +20,12 @@ import { Button } from "../../../components/Button/Button";
 export function InfoPranayamaScreen() {
     const navigation = useNavigation();
 
-
-
     const navigateRespirate = () => {
         navigation.navigate('Pranayama');
     };
 
     const handleLinkPress = () => {
-        const videoUrl = 'https://www.youtube.com/watch?v=SEd3eMfp75E'; // Substitua pela URL do seu vídeo no YouTube
+        const videoUrl = 'https://www.youtube.com/watch?v=1mYwMyoh9sI'; // Substitua pela URL do seu vídeo no YouTube
         Linking.openURL(videoUrl);
     };
 
@@ -45,7 +43,7 @@ export function InfoPranayamaScreen() {
 
                     <Image source={stepOne} style={{ width: 250, height: 150 }} />
                     <View style={stylesinfoPranayama.innerCard}> 
-                        <Text style={stylesinfoPranayama.text}>Para começar, verifique a numeração dos dedos na imagem abaixo e posicione em você conforme imagem acima, assim que estiver pronto clique em "Iniciar".</Text>
+                        <Text style={stylesinfoPranayama.text}>Para começar, sente-se confortavelmente com a coluna reta e relaxada, ems seguida verifique a numeração dos dedos na imagem abaixo e posicione em você conforme imagem acima, assim que estiver pronto clique em "Iniciar".</Text>
                         <Image source={hand} style={{ width: 200, height: 200 }} />
                     </View>
                 </View>
