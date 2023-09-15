@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 // Utils
 import { fetchVideos } from "../utils/fetchVideos";
 import { styles } from "../utils/styles";
+import { baseColor } from "../utils/baseColor";
 
 // Api
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -57,10 +58,10 @@ export function AnxietyScreen() {
         <View style={styles.container}>
             <BackButton />
             {isLoading ? (
-                <ActivityIndicator size="large" color="blue" style={{flex: 1}} />
+                <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="leanpub" size={100} color={"#007ACC"} />
+                    <Icon style={styles.icon} name="leanpub" size={100} color={baseColor} />
                     <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
                     <Text style={styles.description}>
                         Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.

@@ -2,6 +2,7 @@ import { View, Text, ScrollView, ActivityIndicator  } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
+import { baseColor } from "../utils/baseColor";
 
 // Api
 import { fetchVideos } from "../utils/fetchVideos";
@@ -70,24 +71,24 @@ export function SoundScreen() {
         <View style={styles.container}>
             <BackButton />
             {isLoading ? (
-                <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
+                <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="music" size={100} color={"#007ACC"} />
+                    <Icon style={styles.icon} name="music" size={100} color={baseColor} />
                     <Text style={styles.title}>Relaxamento Sonoro</Text>
                     <Text style={styles.description}>
                         Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
                     </Text>
                     <View>
-                        <Text style={[styles.videoTitle, { fontSize: 22, color: '#007ACC' }]}>Lo-fi</Text>
+                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>Lo-fi</Text>
                         {lofiVideos && (
                             <VideoList videos={lofiVideos} />
                         )}
-                        <Text style={[styles.videoTitle, { color: '#007ACC' }]}>Meditação</Text>
+                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>Meditação</Text>
                         {meditationVideos && (
                             <VideoList videos={meditationVideos} />
                         )}
-                        <Text style={[styles.videoTitle, { color: '#007ACC' }]}>432hz</Text>
+                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>432hz</Text>
                         {specialVideos && (
                             <VideoList videos={specialVideos} />
                         )}

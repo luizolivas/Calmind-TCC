@@ -4,9 +4,9 @@ import { styles } from "../../utils/styles";
 
 export function VideoList({ videos }) {
     return (
-        videos.map((video) => (
+        videos.map((video, index) => (
             <TouchableOpacity
-                key={video.id.videoId}
+                key={index}
                 style={styles.videoContainer}
                 onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${video.id.videoId}`)}
             >
