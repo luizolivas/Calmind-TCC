@@ -73,21 +73,21 @@ export function SoundScreen() {
                 <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="music" size={100} color={"#B34BD6"} />
+                    <Icon style={styles.icon} name="music" size={100} color={"#007ACC"} />
                     <Text style={styles.title}>Relaxamento Sonoro</Text>
                     <Text style={styles.description}>
                         Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
                     </Text>
                     <View>
-                        <Text style={styles.videoTitle}>Lo-fi</Text>
+                        <Text style={[styles.videoTitle, { fontSize: 22, color: '#007ACC' }]}>Lo-fi</Text>
                         {lofiVideos && (
                             <VideoList videos={lofiVideos} />
                         )}
-                        <Text style={styles.videoTitle}>Meditação</Text>
+                        <Text style={[styles.videoTitle, { color: '#007ACC' }]}>Meditação</Text>
                         {meditationVideos && (
                             <VideoList videos={meditationVideos} />
                         )}
-                        <Text style={styles.videoTitle}>432hz</Text>
+                        <Text style={[styles.videoTitle, { color: '#007ACC' }]}>432hz</Text>
                         {specialVideos && (
                             <VideoList videos={specialVideos} />
                         )}

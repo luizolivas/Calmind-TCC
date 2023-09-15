@@ -1,6 +1,6 @@
 import { Image } from 'react-native';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/icon.png';
 
 export function ImageLogo() {
     return (

@@ -92,23 +92,23 @@ export function HomeScreen() {
             <Text style={{fontSize: 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic'}}>- {author}</Text>
             <View style={stylesHome.sectionContainer}>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
-                    <Icon name="leanpub" size={35} color={"#DB8946"} />
+                    <Icon name="leanpub" size={35} color={"#007ACC"} />
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Aprenda sobre Ansiedade</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
-                    <Icon name="music" size={35} color={"#B34BD6"} />
+                    <Icon name="music" size={35} color={"#007ACC"} />
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Relaxamento Sonoro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
-                    <Icon name="headphones" size={35} color={"#4441F2"} />
+                    <Icon name="headphones" size={35} color={"#007ACC"} />
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Podcasts</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
-                    <Icon name="leaf" size={35} color={"#50C878"} />
+                    <Icon name="leaf" size={35} color={"#007ACC"} />
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Acalme-se</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
-                    <Icon name="medkit" size={35} color={"#D22B2B"} />
+                    <Icon name="medkit" size={35} color={"#007ACC"} />
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Autocuidados</Text>
                 </TouchableOpacity>
             </View>

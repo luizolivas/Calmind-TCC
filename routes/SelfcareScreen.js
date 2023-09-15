@@ -16,17 +16,17 @@ export function SelfcareScreen() {
         <View style={styles.container}>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="medkit" size={100} color={"#D22B2B"} />
+                <Icon style={styles.icon} name="medkit" size={100} color={"#007ACC"} />
                 <Text style={styles.title}>Autocuidados</Text>
                 <Text style={styles.description}>
                     Priorize seu bem-estar com nossas práticas de autocuidado.
                 </Text>
                 <View style={styles.containerCards}>
-                    <CardView title="Sofrologia" navigate="Sofrology" bgColor='#E1C16E'>
-                        <CardRecomendation text="Relaxamento Geral" bgColor="#DAA06D" />
+                    <CardView title="Sofrologia" navigate="Sofrology" bgColor='#B2BEB5'>
+                        <CardRecomendation text="Relaxamento Geral" bgColor="#007ACC" />
                     </CardView>
-                    <CardView title="Automassagem" navigate="Automassage" bgColor='#E1C16E'>
-                        <CardRecomendation text="Relaxamento Muscular" bgColor="#DAA06D" />
+                    <CardView title="Automassagem" navigate="Automassage" bgColor='#B2BEB5'>
+                        <CardRecomendation text="Relaxamento Muscular" bgColor="#007ACC" />
                     </CardView>
                 </View>
             </ScrollView>

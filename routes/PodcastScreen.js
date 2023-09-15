@@ -59,7 +59,7 @@ export function PodcastScreen() {
                 <ActivityIndicator size="large" color="grey" style={{flex: 1}} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="headphones" size={100} color={"#4441F2"} />
+                    <Icon style={styles.icon} name="headphones" size={100} color={"#007ACC"} />
                     <Text style={styles.title}>Podcasts</Text>
                     <Text style={styles.description}>
                         Confira alguns dos podcasts mais recomendados abaixo:
