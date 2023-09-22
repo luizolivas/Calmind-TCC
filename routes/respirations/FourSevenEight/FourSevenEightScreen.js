@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../utils/styles';
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 
@@ -141,7 +142,7 @@ export function FourSevenEightScreen() {
     })
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <View style={{ flex: 1 }}></View>
             {/* Renderiza a contagem regressiva ou o número de ciclos */}
             {countdown > 0 ? (
@@ -173,7 +174,7 @@ export function FourSevenEightScreen() {
             </View>
 
             <View style={{ flex: 1 }}></View>
-        </View>
+        </CustomGradient>
     );
 }
 

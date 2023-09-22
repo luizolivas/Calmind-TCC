@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Linking } 
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -30,7 +31,7 @@ export function InfoPranayamaScreen() {
     };
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
                 <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Respiração das Narinas Alternadas (Nadi Shodhan Pranayama)</Text>
@@ -56,7 +57,7 @@ export function InfoPranayamaScreen() {
                 <Button text="Iniciar" onPress={navigateRespirate} style={stylesinfoPranayama.button} />
                 <View style={{ flex: 1 }}></View>
             </ScrollView>
-        </View>
+        </CustomGradient>
         
         
     );

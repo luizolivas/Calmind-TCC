@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
+import CustomGradient from "../utils/CustomGradient";
 
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -14,7 +15,7 @@ import { CardRecomendation } from "../components/CardRecomendation/CardRecomenda
 export function SelfcareScreen() {
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Icon style={styles.icon} name="medkit" size={100} color={baseColor} />
@@ -31,6 +32,6 @@ export function SelfcareScreen() {
                     </CardView>
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }

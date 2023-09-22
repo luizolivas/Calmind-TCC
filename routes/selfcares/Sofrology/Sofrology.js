@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,7 +26,7 @@ export function Sofrology() {
     };
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Sofrologia</Text>
@@ -43,7 +44,7 @@ export function Sofrology() {
                     <Button text="Iniciar" onPress={() => navigation.navigate('SofrologyAct', { isSoundOn })} style={stylesSofrology.button}/>
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }
 

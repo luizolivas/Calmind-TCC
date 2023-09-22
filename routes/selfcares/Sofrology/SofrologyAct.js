@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../utils/styles';
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 
@@ -77,7 +78,7 @@ export function SofrologyAct() {
     })
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Relaxamento Progressivo</Text>
                 <StepByStep list={listOfSteps} />
@@ -85,6 +86,6 @@ export function SofrologyAct() {
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }

@@ -4,6 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
+import CustomGradient from "../utils/CustomGradient";
+
 
 // Api
 import axios from "axios";
@@ -87,7 +89,7 @@ export function HomeScreen() {
     }, [])
 
     return (
-        <View style={styles.container}>
+            <CustomGradient>
             <ImageLogo />
             <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium' }}>'{quote}'</Text>
             <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic' }}>- {author}</Text>
@@ -123,7 +125,7 @@ export function HomeScreen() {
                     <Text style={{ fontFamily: 'Roboto_400Regular' }}>Conversar</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </CustomGradient>
     );
 }
 

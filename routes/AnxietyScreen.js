@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { fetchVideos } from "../utils/fetchVideos";
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
+import CustomGradient from "../utils/CustomGradient";
 
 // Api
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -55,7 +56,7 @@ export function AnxietyScreen() {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             {isLoading ? (
                 <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
@@ -73,6 +74,6 @@ export function AnxietyScreen() {
                     </View>
                 </ScrollView>
             )}
-        </View>
+        </CustomGradient>
     );
 }

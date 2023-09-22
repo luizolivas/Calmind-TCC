@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
+import CustomGradient from "../utils/CustomGradient";
 
 // Api
 import { fetchVideos } from "../utils/fetchVideos";
@@ -68,7 +69,7 @@ export function SoundScreen() {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             {isLoading ? (
                 <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
@@ -95,6 +96,6 @@ export function SoundScreen() {
                     </View>
                 </ScrollView>
             )}
-        </View>
+        </CustomGradient>
     );
 }

@@ -2,6 +2,7 @@ import { View, Text, StyleSheet,TouchableOpacity, ScrollView } from "react-nativ
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -34,7 +35,7 @@ export function InfoDiafragmaticScreen() {
     };
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
             
@@ -62,7 +63,7 @@ export function InfoDiafragmaticScreen() {
             <View style={{flex: 1}}></View>    
             </ScrollView>
 
-        </View>
+        </CustomGradient>
     );
 }
 

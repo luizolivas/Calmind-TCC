@@ -2,6 +2,7 @@ import { View, Text, ScrollView, StyleSheet } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
+import CustomGradient from "../utils/CustomGradient";
 
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -12,7 +13,7 @@ import { HelpContentElement } from "../components/HelpContentElement/HelpContent
 
 export function HelpScreen() {
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Icon style={styles.icon} name="question-circle" size={100} color={baseColor} />
@@ -29,7 +30,7 @@ export function HelpScreen() {
                     <HelpContentElement name="comments" color={baseColor} title="Conversar" navigationRoute="Talk" text="Quando a necessidade de compartilhar torna-se urgente, nossa seção de conversas oferece acesso rápido ao CVV (Centro de Valorização da Vida) na seção de chat online ou à possibilidade de fazer uma ligação direta. Priorize sua saúde mental e emocional." />
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }
 

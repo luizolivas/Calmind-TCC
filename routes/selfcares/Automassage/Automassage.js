@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,7 +26,7 @@ export function Automassage() {
     };
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Automassagem</Text>
@@ -41,6 +42,6 @@ export function Automassage() {
                     <Button text="Massagem no Couro Cabeludo" onPress={() => navigation.navigate('HairMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, backgroundColor: "#03045E" }}/>
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }

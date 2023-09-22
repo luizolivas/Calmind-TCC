@@ -2,6 +2,8 @@ import { View, Text, StyleSheet } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
+import CustomGradient from "../../../utils/CustomGradient";
+
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -24,7 +26,7 @@ export function InsFourSevenEightScreen() {
     };
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             <Text style={styles.title}>Técnica de Respiração: 4-7-8</Text>
             <Text style={styles.description}>
@@ -33,7 +35,7 @@ export function InsFourSevenEightScreen() {
             <ButtonsSound onFunction={on} offFunction={mute} />
             <Button text="Iniciar" onPress={() => navigation.navigate('FourSevenEight', { isSoundOn })} style={stylesIns.button}/>
             <View style={{flex: 1}}></View>
-        </View>
+        </CustomGradient>
     );
 }
 

@@ -1,1 +1,1 @@
-export const baseColor = "#0AACCC"
+export const baseColor = "#64B5F6"

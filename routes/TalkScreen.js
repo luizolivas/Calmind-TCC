@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Linking  } from "react-native
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
-import { LinearGradient } from 'expo-linear-gradient';
+import CustomGradient from "../utils/CustomGradient";
 
 
 // Icons in https://fontawesome.com/v4/icons/
@@ -23,11 +23,7 @@ export function TalkScreen() {
 
     return (
         // colors={['#FFD7B2', '#FFAB91']}
-        <LinearGradient
-        colors={['#E8F5E9', '#C8E6C9']}
-
-        style={styles.container}
-        >
+        <CustomGradient>
             <BackButton />
             <Icon style={styles.icon} name="comments" size={100} color={"#64B5F6"} />
             <Text style={styles.title}>Conversar</Text>
@@ -45,7 +41,7 @@ export function TalkScreen() {
                 </TouchableOpacity>
             </View>
             <View style={{flex: 1}}></View>
-            </LinearGradient>
+        </CustomGradient>
     );
 }
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../utils/styles';
+import CustomGradient from "../../../utils/CustomGradient";
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 
@@ -126,7 +127,7 @@ export function PranayamaScreen() {
     })
 
     return (
-        <View>
+        <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
             
@@ -171,7 +172,7 @@ export function PranayamaScreen() {
             <View style={{ flex: 1 }}></View>
         </View>
         </ScrollView>
-        </View>
+        </CustomGradient>
         
         
     );

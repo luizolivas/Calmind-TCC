@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
 import { styles } from '../../../../utils/styles';
+import CustomGradient from "../../../../utils/CustomGradient";
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 
@@ -70,7 +71,7 @@ export function ChestMassage() {
     })
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Massagem no Peito</Text>
                 <StepByStep list={listOfSteps} />
@@ -78,6 +79,6 @@ export function ChestMassage() {
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
             </ScrollView>
-        </View>
+        </CustomGradient>
     );
 }

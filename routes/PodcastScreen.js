@@ -7,6 +7,7 @@ import { baseColor } from "../utils/baseColor";
 // Api
 import { fetchVideos } from "../utils/fetchVideos";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CustomGradient from "../utils/CustomGradient";
 
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -54,7 +55,7 @@ export function PodcastScreen() {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <CustomGradient>
             <BackButton />
             {isLoading ? (
                 <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
@@ -72,6 +73,6 @@ export function PodcastScreen() {
                     </View>
                 </ScrollView>
             )}
-        </View>
+        </CustomGradient>
     );
 }
