@@ -25,7 +25,7 @@ export function InfoDiafragmaticScreen() {
     };
 
     const navigateRespirate = () => {
-        navigation.navigate('Diafragmatic');
+        navigation.navigate('Diafragmatic', { isSoundOn });
     };
 
     const handleLinkPress = () => {
