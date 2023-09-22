@@ -27,7 +27,7 @@ export function CalmScreen() {
                         <CardRecomendation text="Foco" bgColor={baseColor} />
                         <CardRecomendation text="Relaxamento" bgColor={baseColor} />
                     </CardView>
-                    <CardView title="Respiração Diafragmática" navigate="Diafragmatic" bgColor='#B2BEB5'>
+                    <CardView title="Respiração Diafragmática" navigate="InfoDiafragmatic" bgColor='#B2BEB5'>
                         <CardRecomendation text="Foco" bgColor={baseColor} />
                         <CardRecomendation text="Relaxamento" bgColor={baseColor} />
                     </CardView>
