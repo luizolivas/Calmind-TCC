@@ -78,23 +78,24 @@ export function DiafragmaticScreen() {
             }, 1000);
             if (currentTime === 5 && circleColor == 'lightblue') {
                 setCurrentTime(1);
-                setInstruction('Prenda: Segure a respiração por 7 segundos.');
-                setCircleColor('green');
+                setInstruction('Prenda: Segure a respiração 2 segundos.');
+                setCircleColor('red');
                 animateCircleScale(1.2); // Iniciar animação para aumentar o tamanho
             }
-            else if (currentTime === 8 && circleColor == 'green') {
+            else if (currentTime === 3 && circleColor == 'red') {
                 setCurrentTime(1);
-                setInstruction('Expire: Solte o ar pela boca por 8 segundos.');
-                setCircleColor('red');
-                animateCircleScale(0.8, 8000); // Iniciar animação para diminuir o tamanho
+                setInstruction('Expire: Solte o ar por 6 segundos.');
+                setCircleColor('green');
+                animateCircleScale(0.8, 6000); // Iniciar animação para diminuir o tamanho
             }
-            else if (currentTime === 9 && circleColor == 'red') {
+            else if (currentTime === 7 && circleColor == 'green') {
                 setCurrentTime(0);
                 setCounterCicles(counterCicles + 1);
                 setInstruction('Inspire: Respire pelo nariz por 4 segundos.');
                 setCircleColor('lightblue');
                 animateCircleScale(1.2,4000); // Iniciar animação para retornar ao tamanho original
             }
+            
         } else {
             clearInterval(interval);
         }
@@ -155,19 +156,22 @@ export function DiafragmaticScreen() {
             {/* Renderiza o círculo colorido */}
             <Animated.View
                 style={[
-                    stylesFourSevenEight.circle,
+                    stylesDiafragmatic.circle,
                     { backgroundColor: circleColor, transform: [{ scale: circleScaleAnimated }] },
                 ]}>
-                <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
+                <Text style={stylesDiafragmatic.circleText}>{currentTime}</Text>
             </Animated.View>
 
-            <View style={stylesFourSevenEight.instructionsContainer}>
+            <View style={stylesDiafragmatic.instructionsContainer}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
                 {countdown > 0 ? (
                     <Text></Text>
                 ) : (
                     <Text style={styles.description}>{instruction}</Text>
                 )}
+                <Text style={stylesDiafragmatic.instructionRespiration}>
+                    Mantenha a mão sobre o abdômen.
+                </Text>
                 <View >
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
@@ -178,7 +182,7 @@ export function DiafragmaticScreen() {
     );
 }
 
-const stylesFourSevenEight = StyleSheet.create({
+const stylesDiafragmatic = StyleSheet.create({
     secondsText: {
         fontSize: 40,
         marginBottom: 20,
@@ -212,4 +216,10 @@ const stylesFourSevenEight = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: 20,
     },
+    instructionRespiration: {
+        textAlign: 'center',
+        fontSize: 17,
+        marginTop: 10,
+        marginBottom: 20
+    }
 });
