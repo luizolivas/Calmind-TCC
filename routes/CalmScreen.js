@@ -25,16 +25,16 @@ export function CalmScreen() {
                 </Text>
                 <View style={styles.containerCards}>
                     <CardView title="Respiração 4-7-8" navigate="InstructionFourSevenEight" bgColor='#B2BEB5'>
-                        <CardRecomendation text="Foco" bgColor={baseColor} />
-                        <CardRecomendation text="Relaxamento" bgColor={baseColor} />
+                        <CardRecomendation text="Acalmar" bgColor={baseColor} />
+                        <CardRecomendation text="Relaxar" bgColor={baseColor} />
                     </CardView>
                     <CardView title="Respiração Diafragmática" navigate="InfoDiafragmatic" bgColor='#B2BEB5'>
-                        <CardRecomendation text="Foco" bgColor={baseColor} />
-                        <CardRecomendation text="Relaxamento" bgColor={baseColor} />
+                        <CardRecomendation text="Equilibrio" bgColor={baseColor} />
+                        <CardRecomendation text="Clareza  Mental" bgColor={baseColor} />
                     </CardView>
                     <CardView title="Respiração das Narinas Alternadas (Nadi Shodhan Pranayama)" navigate="PranayamaInfo" bgColor='#B2BEB5'>
-                        <CardRecomendation text="Foco" bgColor={baseColor} />
-                        <CardRecomendation text="Relaxamento" bgColor={baseColor} />
+                        <CardRecomendation text="Reduz Estresse" bgColor={baseColor} />
+                        <CardRecomendation text="Acalmar" bgColor={baseColor} />
                     </CardView>
                 </View>
             </ScrollView>
