@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet,TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet,TouchableOpacity, ScrollView, Linking } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -30,7 +30,7 @@ export function InfoDiafragmaticScreen() {
     };
 
     const handleLinkPress = () => {
-        const videoUrl = 'https://www.youtube.com/watch?v=Mu39nw6R0Lk'; // Substitua pela URL do seu vídeo no YouTube
+        const videoUrl = 'https://www.youtube.com/watch?v=Mu39nw6R0Lk';
         Linking.openURL(videoUrl);
     };
 
@@ -58,7 +58,7 @@ export function InfoDiafragmaticScreen() {
             </View>
 
             <ButtonsSound onFunction={on} offFunction={mute} />
-            <Button text="Iniciar" onPress={navigateRespirate} style={stylesIns.buttonIni} />
+            <Button text="Iniciar" onPress={navigateRespirate} style={stylesIns.button} />
 
             <View style={{flex: 1}}></View>    
             </ScrollView>
@@ -68,12 +68,6 @@ export function InfoDiafragmaticScreen() {
 }
 
 const stylesIns = StyleSheet.create({
-    button: {
-        width: 260,
-        height: 60,
-        marginTop: 50,
-        backgroundColor: "#50C878"
-    },
     linkText: {
         color: 'blue',
         textDecorationLine: 'underline',
@@ -81,11 +75,10 @@ const stylesIns = StyleSheet.create({
         marginTop: 10,
         marginBottom: 20
     },
-    buttonIni: {
-        width: 300,
+    button: {
+        width: 280,
         height: 60,
         marginTop: 50,
         backgroundColor: "#50C878"
-    },
-
+    }
 });

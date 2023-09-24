@@ -4,7 +4,6 @@ import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
 import CustomGradient from "../utils/CustomGradient";
 
-
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -22,13 +21,12 @@ export function TalkScreen() {
     }
 
     return (
-        // colors={['#FFD7B2', '#FFAB91']}
         <CustomGradient>
             <BackButton />
-            <Icon style={styles.icon} name="comments" size={100} color={"#64B5F6"} />
+            <Icon style={styles.icon} name="comments" size={100} color={baseColor} />
             <Text style={styles.title}>Conversar</Text>
             <Text style={styles.description}>
-                Saiba que você não está passando por isso sozinho! O CVV – Centro de Valorização da Vida, um espaço seguro e confidencial, está pronto para ouvir você com empatia e carinho.
+                Saiba que você não está passando por isso sozinho! O CVV - Centro de Valorização da Vida, um espaço seguro e confidencial, está pronto para ouvir você com empatia e carinho.
             </Text>
             <View style={stylesTalk.buttonContainer}>
                 <TouchableOpacity onPress={openChat} style={stylesTalk.button}>
