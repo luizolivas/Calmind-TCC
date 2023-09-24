@@ -39,7 +39,7 @@ export function Automassage() {
                     <Button text="Massagem nas Têmporas" onPress={() => navigation.navigate('TemporaMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, backgroundColor: "#90E0EF" }}/>
                     <Button text="Massagem nas Mãos" onPress={() => navigation.navigate('HandMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, backgroundColor: "#00B4D8" }}/>
                     <Button text="Massagem no Peito" onPress={() => navigation.navigate('ChestMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, backgroundColor: "#0077B6" }}/>
-                    <Button text="Massagem no Couro Cabeludo" onPress={() => navigation.navigate('HairMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, backgroundColor: "#03045E" }}/>
+                    <Button text="Massagem no Couro Cabeludo" onPress={() => navigation.navigate('HairMassage', { isSoundOn })} style={{ width: 280, height: 60, marginTop: 50, marginBottom: 10,backgroundColor: "#03045E" }}/>
                 </View>
             </ScrollView>
         </CustomGradient>

@@ -36,7 +36,10 @@ export const styles = StyleSheet.create({
     },
     thumbnail: {
         width: 240,
-        height: 160
+        height: 160,
+        borderRadius: 15,
+        borderColor: 'black',
+        borderWidth: 1
     },
     // Cards Style
     containerCards: {
@@ -50,6 +53,7 @@ export const styles = StyleSheet.create({
         width: 150,
         height: 60,
         marginTop: 50,
+        marginBottom: 10,
     }
 });
   

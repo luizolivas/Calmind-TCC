@@ -2,15 +2,12 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useEffect, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 
-import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
 import CustomGradient from "../utils/CustomGradient";
-
 
 // Api
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -89,7 +86,7 @@ export function HomeScreen() {
     }, [])
 
     return (
-            <CustomGradient>
+        <CustomGradient>
             <ImageLogo />
             <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium' }}>'{quote}'</Text>
             <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic' }}>- {author}</Text>

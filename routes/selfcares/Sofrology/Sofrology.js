@@ -53,6 +53,7 @@ const stylesSofrology = StyleSheet.create({
         width: 260,
         height: 60,
         marginTop: 50,
+        marginBottom: 10,
         backgroundColor: "#50C878"
     }
 })

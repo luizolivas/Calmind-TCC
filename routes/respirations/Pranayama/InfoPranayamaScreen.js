@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Linking } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Linking, Platform } from "react-native";
 
 import { styles } from "../../../utils/styles";
 import CustomGradient from "../../../utils/CustomGradient";
@@ -36,10 +36,8 @@ export function InfoPranayamaScreen() {
                     <Text style={stylesinfoPranayama.instruction}>COMO FAZER?</Text>
                     <View style={stylesinfoPranayama.container}>
                         <Image source={stepOne} style={{ width: 250, height: 150 }} />
-                        <View style={stylesinfoPranayama.innerCard}> 
-                            <Text style={stylesinfoPranayama.text}>Para começar, sente-se confortavelmente com a coluna reta e relaxada, ems seguida verifique a numeração dos dedos na imagem abaixo e posicione em você conforme imagem acima, assim que estiver pronto clique em "Iniciar".</Text>
-                            <Image source={hand} style={{ width: 200, height: 200 }} />
-                        </View>
+                        <Text style={stylesinfoPranayama.text}>Para começar, sente-se confortavelmente com a coluna reta e relaxada, ems seguida verifique a numeração dos dedos na imagem abaixo e posicione em você conforme imagem acima, assim que estiver pronto clique em "Iniciar".</Text>
+                        <Image source={hand} style={{ width: 200, height: 200 }} />
                     </View>
                     <View>
                         <TouchableOpacity onPress={handleLinkPress}>
@@ -62,11 +60,24 @@ const stylesinfoPranayama = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
-        borderWidth: 1, 
+        borderWidth: 1,
+        backgroundColor: 'white',
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
       },
     text: {
-        textAlign: 'justify',
-        marginVertical: 10
+        textAlign: 'center',
+        marginVertical: 15,
+        marginHorizontal: 10
     },
     linkText: {
         color: 'blue',
@@ -74,17 +85,11 @@ const stylesinfoPranayama = StyleSheet.create({
         textAlign: 'center',
         marginTop: 10,
     },
-    innerCard: {
-        borderRadius: 10,
-        padding: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     instruction: {
         width: 280,
         fontSize: 18,
         fontWeight: 'bold', 
-        backgroundColor: 'grey',
+        backgroundColor: '#13388E',
         color: 'white', 
         padding: 8, 
         borderTopLeftRadius: 10, 
@@ -95,6 +100,7 @@ const stylesinfoPranayama = StyleSheet.create({
         width: 280,
         height: 60,
         marginTop: 50,
+        marginBottom: 10,
         backgroundColor: "#50C878"
     }
 });
