@@ -73,7 +73,7 @@ const stylesinfoPranayama = StyleSheet.create({
                 shadowRadius: 5,
             }
         })
-      },
+    },
     text: {
         textAlign: 'center',
         marginVertical: 15,

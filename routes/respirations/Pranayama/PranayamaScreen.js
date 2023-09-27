@@ -5,7 +5,7 @@ import { useBackHandler } from '@react-native-community/hooks';
 import { styles } from '../../../utils/styles';
 import CustomGradient from "../../../utils/CustomGradient";
 
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import stepOne from "../../../assets/stepOne.jpg"
 import stepTwo from "../../../assets/stepTwo.jpg"
@@ -13,7 +13,6 @@ import hand from "../../../assets/hand.jpg"
 
 // Components
 import { Button } from '../../../components/Button/Button';
-
 
 export function PranayamaScreen() {
 
@@ -30,8 +29,6 @@ export function PranayamaScreen() {
     const [countdown, setCountdown] = useState(3);
     const [instruction, setInstruction] = useState('Inspire pela narina direita e bloqueie a narina esquerda')
     const [circleScaleAnimated] = useState(new Animated.Value(1.0));
-
-    
 
     const animateCircleScale = (toValue, time) => {
         Animated.timing(circleScaleAnimated, {
@@ -129,52 +126,41 @@ export function PranayamaScreen() {
     return (
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.container}>
-            
-            <View style={{ flex: 1 }}></View>
-            {/* Renderiza a contagem regressiva ou o número de ciclos */}
-            {countdown > 0 ? (
-                <Text style={styles.title}> Expire todo o ar dos seus pulmões.{'\n'}Começando em: {countdown} </Text>
-            ) : (
-                <Text style={styles.title}>
-                    Ciclos respiratórios realizados: {counterCicles}
-                </Text>
-            )}
-            {/* Renderiza o círculo colorido */}
-            <Animated.View
-                style={[
-                    stylesPranayama.circle,
-                    { backgroundColor: circleColor, transform: [{ scale: circleScaleAnimated }] },
-                ]}>
-                <Text style={stylesPranayama.circleText}>{currentTime}</Text>
-            </Animated.View>
-
-            <View style={stylesPranayama.instructionsContainer}>
+                <View style={{ flex: 1, flexDirection: 'column', alignContent: 'center', alignItems: 'center' }}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
                 {countdown > 0 ? (
-                    <Text></Text>
+                    <Text style={styles.title}> Expire todo o ar dos seus pulmões.{'\n'}Começando em: {countdown} </Text>
                 ) : (
-                    <Text style={styles.description}>{instruction}</Text>
+                    <Text style={styles.title}>
+                        Ciclos respiratórios realizados: {counterCicles}
+                    </Text>
                 )}
-                    <View style={stylesPranayama.container}>
-                        <Image source={images[currentImageIndex]} style={{ width: 250, height: 150 }} />
-                        <View style={stylesPranayama.innerCard}> 
+                {/* Renderiza o círculo colorido */}
+                <Animated.View
+                    style={[
+                        stylesPranayama.circle,
+                        { backgroundColor: circleColor, transform: [{ scale: circleScaleAnimated }] },
+                    ]}>
+                    <Text style={stylesPranayama.circleText}>{currentTime}</Text>
+                </Animated.View>
+                <View style={stylesPranayama.instructionsContainer}>
+                    {/* Renderiza a contagem regressiva ou o número de ciclos */}
+                    {countdown > 0 ? (
+                        <Text></Text>
+                    ) : (
+                        <Text style={styles.description}>{instruction}</Text>
+                    )}
+                        <View style={stylesPranayama.container}>
+                            <Image source={images[currentImageIndex]} style={{ width: 250, height: 150 }} />
                             <Image source={hand} style={{ width: 200, height: 200 }} />
                         </View>
-
+                    <View >
+                        <Button text="Encerrar" onPress={goBack} style={stylesPranayama.button} />
                     </View>
-                <View >
-                    <Button text="Encerrar" onPress={goBack} style={stylesPranayama.button} />
                 </View>
-            </View>
-
-
-            <View style={{ flex: 1 }}></View>
-        </View>
-        </ScrollView>
+                </View>
+            </ScrollView>
         </CustomGradient>
-        
-        
     );
 }
 
@@ -214,21 +200,29 @@ const stylesPranayama = StyleSheet.create({
         marginTop: 50
     },
     instructionsContainer: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         marginVertical: 20,
     },
-    innerCard: {
+    container: {
+        flex: 1,
+        height: 400,
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: 10,
-
-        padding: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-      container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 3,
-        borderWidth: 1, 
-      },
+        borderWidth: 1,
+        backgroundColor: 'white',
+        ...Platform.select({
+            android: {
+                elevation: 5
+            },
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+            }
+        })
+    },
 });

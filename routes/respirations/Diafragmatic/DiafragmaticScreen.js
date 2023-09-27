@@ -162,7 +162,6 @@ export function DiafragmaticScreen() {
                 ]}>
                 <Text style={stylesDiafragmatic.circleText}>{currentTime}</Text>
             </Animated.View>
-
             <View style={stylesDiafragmatic.instructionsContainer}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
                 {countdown > 0 ? (
@@ -177,7 +176,6 @@ export function DiafragmaticScreen() {
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
             </View>
-
             <View style={{ flex: 1 }}></View>
         </CustomGradient>
     );
