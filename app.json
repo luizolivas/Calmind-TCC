@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "calmif",
-    "slug": "calmif",
+    "name": "calmind",
+    "slug": "calmind",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
