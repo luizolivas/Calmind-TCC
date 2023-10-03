@@ -12,7 +12,7 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
 import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
-export function CalmScreen() {
+function CalmScreen() {
 
     return (
         <CustomGradient>
@@ -41,3 +41,5 @@ export function CalmScreen() {
         </CustomGradient>
     );
 }
+
+export default CalmScreen

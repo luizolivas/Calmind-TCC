@@ -34,6 +34,8 @@ export function HelpScreen() {
     );
 }
 
+export default HelpScreen
+
 const stylesHelp = StyleSheet.create({
     contentContainer: {
         flex: 1,

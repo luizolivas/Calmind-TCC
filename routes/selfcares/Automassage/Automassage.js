@@ -11,7 +11,7 @@ import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
 
-export function Automassage() {
+function Automassage() {
 
     const [isSoundOn, setIsSoundOn] = useState(true);
 
@@ -45,3 +45,5 @@ export function Automassage() {
         </CustomGradient>
     );
 }
+
+export default Automassage

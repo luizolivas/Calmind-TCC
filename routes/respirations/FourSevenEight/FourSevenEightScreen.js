@@ -12,7 +12,7 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../components/Button/Button';
 
-export function FourSevenEightScreen() {
+function FourSevenEightScreen() {
 
     const navigation = useNavigation();
 
@@ -177,6 +177,8 @@ export function FourSevenEightScreen() {
         </CustomGradient>
     );
 }
+
+export default FourSevenEightScreen
 
 const stylesFourSevenEight = StyleSheet.create({
     secondsText: {

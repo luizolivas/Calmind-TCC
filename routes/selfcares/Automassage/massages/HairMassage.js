@@ -13,7 +13,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
 
-export function HairMassage() {
+function HairMassage() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -82,3 +82,5 @@ export function HairMassage() {
         </CustomGradient>
     );
 }
+
+export default HairMassage

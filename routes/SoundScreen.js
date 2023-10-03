@@ -16,7 +16,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
 
-export function SoundScreen() {
+function SoundScreen() {
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -99,3 +99,5 @@ export function SoundScreen() {
         </CustomGradient>
     );
 }
+
+export default SoundScreen

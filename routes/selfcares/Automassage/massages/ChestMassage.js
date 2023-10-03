@@ -13,7 +13,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
 
-export function ChestMassage() {
+function ChestMassage() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -82,3 +82,5 @@ export function ChestMassage() {
         </CustomGradient>
     );
 }
+
+export default ChestMassage

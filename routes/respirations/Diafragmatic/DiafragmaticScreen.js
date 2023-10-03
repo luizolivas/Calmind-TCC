@@ -1,4 +1,3 @@
-
 import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
@@ -13,7 +12,7 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../components/Button/Button';
 
-export function DiafragmaticScreen() {
+function DiafragmaticScreen() {
 
     const navigation = useNavigation();
 
@@ -180,6 +179,8 @@ export function DiafragmaticScreen() {
         </CustomGradient>
     );
 }
+
+export default DiafragmaticScreen
 
 const stylesDiafragmatic = StyleSheet.create({
     secondsText: {

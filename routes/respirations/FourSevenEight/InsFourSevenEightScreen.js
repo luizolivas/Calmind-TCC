@@ -12,7 +12,8 @@ import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
 
-export function InsFourSevenEightScreen() {
+function InsFourSevenEightScreen() {
+
     const [isSoundOn, setIsSoundOn] = useState(true);
 
     const navigation = useNavigation();
@@ -38,6 +39,8 @@ export function InsFourSevenEightScreen() {
         </CustomGradient>
     );
 }
+
+export default InsFourSevenEightScreen
 
 const stylesIns = StyleSheet.create({
     button: {

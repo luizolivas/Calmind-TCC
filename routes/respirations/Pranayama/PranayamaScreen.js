@@ -14,7 +14,7 @@ import hand from "../../../assets/hand.jpg"
 // Components
 import { Button } from '../../../components/Button/Button';
 
-export function PranayamaScreen() {
+function PranayamaScreen() {
 
     const navigation = useNavigation();
 
@@ -163,6 +163,8 @@ export function PranayamaScreen() {
         </CustomGradient>
     );
 }
+
+export default PranayamaScreen
 
 const stylesPranayama = StyleSheet.create({
     secondsText: {

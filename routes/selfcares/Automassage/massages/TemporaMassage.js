@@ -14,7 +14,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
 
-export function TemporaMassage() {
+function TemporaMassage() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -84,3 +84,5 @@ export function TemporaMassage() {
         </CustomGradient>
     );
 }
+
+export default TemporaMassage

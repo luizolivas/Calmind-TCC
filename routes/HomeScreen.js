@@ -18,7 +18,7 @@ import { ImageLogo } from "../components/ImageLogo/ImageLogo";
 // Notification
 import { setupNotificationHandling } from "../utils/notifications";
 
-export function HomeScreen() {
+function HomeScreen() {
 
     const [quote, setQuote] = useState();
     const [author, setAuthor] = useState();
@@ -125,6 +125,8 @@ export function HomeScreen() {
         </CustomGradient>
     );
 }
+
+export default HomeScreen
 
 const stylesHome = StyleSheet.create({
     sectionContainer: {

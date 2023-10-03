@@ -16,7 +16,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
 
-export function PodcastScreen() {
+function PodcastScreen() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [videos, setVideos] = useState([]);
@@ -76,3 +76,5 @@ export function PodcastScreen() {
         </CustomGradient>
     );
 }
+
+export default PodcastScreen

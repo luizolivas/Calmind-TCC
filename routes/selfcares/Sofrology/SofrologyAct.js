@@ -13,7 +13,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../components/Button/Button';
 import { StepByStep } from '../../../components/StepByStep/StepByStep';
 
-export function SofrologyAct() {
+function SofrologyAct() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -89,3 +89,5 @@ export function SofrologyAct() {
         </CustomGradient>
     );
 }
+
+export default SofrologyAct

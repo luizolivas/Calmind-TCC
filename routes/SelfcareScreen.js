@@ -12,7 +12,7 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
 import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
-export function SelfcareScreen() {
+function SelfcareScreen() {
 
     return (
         <CustomGradient>
@@ -35,3 +35,5 @@ export function SelfcareScreen() {
         </CustomGradient>
     );
 }
+
+export default SelfcareScreen

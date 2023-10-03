@@ -12,7 +12,8 @@ import stepOne from "../../../assets/stepOne.jpg"
 import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 
-export function InfoPranayamaScreen() {
+function InfoPranayamaScreen() {
+
     const navigation = useNavigation();
 
     const navigateRespirate = () => {
@@ -51,6 +52,8 @@ export function InfoPranayamaScreen() {
         </CustomGradient>
     );
 }
+
+export default InfoPranayamaScreen
 
 const stylesinfoPranayama = StyleSheet.create({
     container: {

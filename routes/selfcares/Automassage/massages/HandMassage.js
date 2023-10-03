@@ -13,7 +13,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
 
-export function HandMassage() {
+function HandMassage() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -84,3 +84,5 @@ export function HandMassage() {
         </CustomGradient>
     );
 }
+
+export default HandMassage

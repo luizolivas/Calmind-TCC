@@ -9,7 +9,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { BackButton } from "../components/BackButton/BackButton";
 
-export function TalkScreen() {
+function TalkScreen() {
 
     const openChat = () => {
         Linking.openURL('https://www.cvv.org.br/chat/'); 
@@ -42,6 +42,8 @@ export function TalkScreen() {
         </CustomGradient>
     );
 }
+
+export default TalkScreen
 
 const stylesTalk = StyleSheet.create({
     buttonContainer: {

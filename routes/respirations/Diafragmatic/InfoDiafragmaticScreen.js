@@ -11,7 +11,7 @@ import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
 
-export function InfoDiafragmaticScreen() {
+function InfoDiafragmaticScreen() {
 
     const [isSoundOn, setIsSoundOn] = useState(true);
 
@@ -62,6 +62,8 @@ export function InfoDiafragmaticScreen() {
         </CustomGradient>
     );
 }
+
+export default InfoDiafragmaticScreen
 
 const stylesIns = StyleSheet.create({
     linkText: {
