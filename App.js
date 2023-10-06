@@ -19,13 +19,13 @@ import FourSevenEightScreen from './routes/respirations/FourSevenEight/FourSeven
 import PranayamaScreen from './routes/respirations/Pranayama/PranayamaScreen';
 
 // Respirations Instructions
-import InsFourSevenEightScreen from './routes/respirations/FourSevenEight/InsFourSevenEightScreen';
-import InfoPranayamaScreen from './routes/respirations/Pranayama/InfoPranayamaScreen';
-import InfoDiafragmaticScreen from './routes/respirations/Diafragmatic/InfoDiafragmaticScreen';
+import { InsFourSevenEightScreen } from './routes/respirations/FourSevenEight/InsFourSevenEightScreen';
+import { InfoPranayamaScreen } from './routes/respirations/Pranayama/InfoPranayamaScreen';
+import { InfoDiafragmaticScreen } from './routes/respirations/Diafragmatic/InfoDiafragmaticScreen';
 
 // Selfcares
-import Sofrology from './routes/selfcares/Sofrology/Sofrology';
-import Automassage from './routes/selfcares/Automassage/Automassage';
+import { Sofrology } from './routes/selfcares/Sofrology/Sofrology';
+import { Automassage } from './routes/selfcares/Automassage/Automassage';
 
 // Selfcares Action
 import SofrologyAct from './routes/selfcares/Sofrology/SofrologyAct';

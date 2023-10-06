@@ -18,9 +18,9 @@ import { ImageLogo } from "../components/ImageLogo/ImageLogo";
 // Notification
 import { setupNotificationHandling } from "../utils/notifications";
 
-export function HomeScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
 
-    const isTablet = Dimensions.get('window').width >= 600;
+export function HomeScreen() {
 
     const [quote, setQuote] = useState();
     const [author, setAuthor] = useState();

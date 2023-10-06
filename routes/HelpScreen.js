@@ -11,10 +11,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 import { HelpContentElement } from "../components/HelpContentElement/HelpContentElement";
 
+const isTablet = Dimensions.get('window').width >= 600;
+
 export function HelpScreen() {
-
-    const isTablet = Dimensions.get('window').width >= 600;
-
     return (
         <CustomGradient>
             <BackButton />

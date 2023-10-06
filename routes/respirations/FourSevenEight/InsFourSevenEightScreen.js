@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -12,7 +12,9 @@ import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
 
-function InsFourSevenEightScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
+
+export function InsFourSevenEightScreen() {
 
     const [isSoundOn, setIsSoundOn] = useState(true);
 
@@ -40,11 +42,9 @@ function InsFourSevenEightScreen() {
     );
 }
 
-export default InsFourSevenEightScreen
-
 const stylesIns = StyleSheet.create({
     button: {
-        width: 260,
+        width: isTablet ? 350 : 260,
         height: 60,
         marginTop: 50,
         backgroundColor: "#50C878"

@@ -9,7 +9,6 @@ const isTablet = Dimensions.get('window').width >= 600;
 
 export function BackButton() {
 
-
     const navigation = useNavigation();
 
     const goBack = () => {
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
       marginLeft: 0, 
     },
     backButtonText: {
-        fontSize: isTablet ? 25 : 20,
+        fontSize: isTablet ? 25 : 16,
         fontFamily: 'Roboto_500Medium',
         marginLeft: 10
     }

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Linking, Platform } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Linking, Platform, Dimensions } from "react-native";
 
 import { styles } from "../../../utils/styles";
 import CustomGradient from "../../../utils/CustomGradient";
@@ -12,7 +12,9 @@ import stepOne from "../../../assets/stepOne.jpg"
 import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 
-function InfoPranayamaScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
+
+export function InfoPranayamaScreen() {
 
     const navigation = useNavigation();
 
@@ -36,9 +38,9 @@ function InfoPranayamaScreen() {
                 <View style={{ alignItems: 'center' }}>
                     <Text style={stylesinfoPranayama.instruction}>COMO FAZER?</Text>
                     <View style={stylesinfoPranayama.container}>
-                        <Image source={stepOne} style={{ width: 250, height: 150 }} />
+                        <Image source={stepOne} style={{ width: isTablet ? 350 : 250, height: isTablet ? 250 : 150 }} />
                         <Text style={stylesinfoPranayama.text}>Para começar, sente-se confortavelmente com a coluna reta e relaxada, ems seguida verifique a numeração dos dedos na imagem abaixo e posicione em você conforme imagem acima, assim que estiver pronto clique em "Iniciar".</Text>
-                        <Image source={hand} style={{ width: 200, height: 200 }} />
+                        <Image source={hand} style={{ width: isTablet ? 300 : 200, height: isTablet ? 300 : 200 }} />
                     </View>
                     <View>
                         <TouchableOpacity onPress={handleLinkPress}>
@@ -53,12 +55,10 @@ function InfoPranayamaScreen() {
     );
 }
 
-export default InfoPranayamaScreen
-
 const stylesinfoPranayama = StyleSheet.create({
     container: {
         flex: 1,
-        width: 280,
+        width: isTablet ? 380 : 280,
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomLeftRadius: 10,
@@ -79,18 +79,20 @@ const stylesinfoPranayama = StyleSheet.create({
     },
     text: {
         textAlign: 'center',
-        marginVertical: 15,
-        marginHorizontal: 10
+        marginVertical: isTablet ? 20 : 15,
+        marginHorizontal: isTablet ? 20 : 10,
+        fontSize: isTablet ? 20 : 15
     },
     linkText: {
         color: 'blue',
         textDecorationLine: 'underline',
         textAlign: 'center',
-        marginTop: 10,
+        marginTop: isTablet ? 20 : 10,
+        fontSize: isTablet ? 20 : 15
     },
     instruction: {
-        width: 280,
-        fontSize: 18,
+        width: isTablet ? 380 : 280,
+        fontSize: isTablet ? 24 : 18,
         fontWeight: 'bold', 
         backgroundColor: '#13388E',
         color: 'white', 
@@ -100,7 +102,7 @@ const stylesinfoPranayama = StyleSheet.create({
         textAlign: 'center',
     },
     button: {
-        width: 280,
+        width: isTablet ? 350 : 280,
         height: 60,
         marginTop: 50,
         marginBottom: 10,

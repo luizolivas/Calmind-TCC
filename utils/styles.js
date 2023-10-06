@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
         height: isTablet ? 220 : 160,
         borderRadius: 15,
         borderColor: 'black',
-        borderWidth: 1
+        borderWidth: isTablet ? 2 : 1
     },
     // Cards Style
     containerCards: {
@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     // Button back
     buttonGoBack: {
         backgroundColor: 'red',
-        width: 150,
+        width: isTablet ? 300 : 150,
         height: 60,
         marginTop: 50,
         marginBottom: 10,

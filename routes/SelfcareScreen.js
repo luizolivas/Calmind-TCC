@@ -12,10 +12,9 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
 import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
+const isTablet = Dimensions.get('window').width >= 600;
+
 export function SelfcareScreen() {
-
-    const isTablet = Dimensions.get('window').width >= 600;
-
     return (
         <CustomGradient>
             <BackButton />

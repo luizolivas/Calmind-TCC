@@ -17,9 +17,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
 
-export function AnxietyScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
 
-    const isTablet = Dimensions.get('window').width >= 600;
+export function AnxietyScreen() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [videos, setVideos] = useState([]);

@@ -25,7 +25,7 @@ export function CardView({ children, title, navigate, bgColor }) {
 
 const stylesCard = StyleSheet.create({
     card: {
-        borderWidth: 1,
+        borderWidth: isTablet ? 2 : 1,
         borderColor: '#1f1f1f',
         borderRadius: 8,
         width: isTablet ? 340 : 230,
@@ -48,7 +48,7 @@ const stylesCard = StyleSheet.create({
         color: 'white',
         fontSize: isTablet ? 22 : 18,
         fontWeight: 'bold',
-        borderBottomWidth: 1,
+        borderBottomWidth: isTablet ? 2 : 1,
         paddingBottom: 8,
         textAlign: 'center'
     },
