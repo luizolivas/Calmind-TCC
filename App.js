@@ -14,9 +14,9 @@ import { HelpScreen } from './routes/HelpScreen';
 import { TalkScreen } from './routes/TalkScreen';
 
 // Respirations
-import DiafragmaticScreen from './routes/respirations/Diafragmatic/DiafragmaticScreen';
-import FourSevenEightScreen from './routes/respirations/FourSevenEight/FourSevenEightScreen';
-import PranayamaScreen from './routes/respirations/Pranayama/PranayamaScreen';
+import { DiafragmaticScreen } from './routes/respirations/Diafragmatic/DiafragmaticScreen';
+import { FourSevenEightScreen } from './routes/respirations/FourSevenEight/FourSevenEightScreen';
+import { PranayamaScreen } from './routes/respirations/Pranayama/PranayamaScreen';
 
 // Respirations Instructions
 import { InsFourSevenEightScreen } from './routes/respirations/FourSevenEight/InsFourSevenEightScreen';
@@ -28,12 +28,12 @@ import { Sofrology } from './routes/selfcares/Sofrology/Sofrology';
 import { Automassage } from './routes/selfcares/Automassage/Automassage';
 
 // Selfcares Action
-import SofrologyAct from './routes/selfcares/Sofrology/SofrologyAct';
-import NeckMassage from './routes/selfcares/Automassage/massages/NeckMassage';
-import TemporaMassage from './routes/selfcares/Automassage/massages/TemporaMassage';
-import HandMassage from './routes/selfcares/Automassage/massages/HandMassage';
-import ChestMassage from './routes/selfcares/Automassage/massages/ChestMassage';
-import HairMassage from './routes/selfcares/Automassage/massages/HairMassage';
+import { SofrologyAct } from './routes/selfcares/Sofrology/SofrologyAct';
+import { NeckMassage } from './routes/selfcares/Automassage/massages/NeckMassage';
+import { TemporaMassage } from './routes/selfcares/Automassage/massages/TemporaMassage';
+import { HandMassage } from './routes/selfcares/Automassage/massages/HandMassage';
+import { ChestMassage } from './routes/selfcares/Automassage/massages/ChestMassage';
+import { HairMassage } from './routes/selfcares/Automassage/massages/HairMassage';
 
 // Fonts
 import { Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@expo-google-fonts/roboto";

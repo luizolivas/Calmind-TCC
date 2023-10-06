@@ -13,7 +13,7 @@ import { Audio } from 'expo-av';
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
 
-function NeckMassage() {
+export function NeckMassage() {
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -85,5 +85,3 @@ function NeckMassage() {
         </CustomGradient>
     );
 }
-
-export default NeckMassage

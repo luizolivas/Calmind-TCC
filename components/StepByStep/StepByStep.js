@@ -1,4 +1,6 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function StepByStep({ list }) {
     return (
@@ -20,15 +22,15 @@ const stylesSteps = StyleSheet.create({
         alignItems: 'flex-start'
     },
     step: {
-        marginVertical: 10
+        marginVertical: isTablet ? 20 : 10
     },
     stepTitle: {
-        fontSize: 18,
+        fontSize: isTablet ? 22 : 18,
         fontFamily: 'Roboto_700Bold',
-        marginBottom: 10
+        marginBottom: isTablet ? 15 : 10
     },
     stepText: {
-        fontSize: 18,
+        fontSize: isTablet ? 22 : 18,
         fontFamily: 'Roboto_400Regular'
     }
 })

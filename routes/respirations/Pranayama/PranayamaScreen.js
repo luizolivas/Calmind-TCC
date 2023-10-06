@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform, Image, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform, Image, ScrollView, Dimensions } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
@@ -14,7 +14,9 @@ import hand from "../../../assets/hand.jpg"
 // Components
 import { Button } from '../../../components/Button/Button';
 
-function PranayamaScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
+
+export function PranayamaScreen() {
 
     const navigation = useNavigation();
 
@@ -151,8 +153,8 @@ function PranayamaScreen() {
                         <Text style={styles.description}>{instruction}</Text>
                     )}
                         <View style={stylesPranayama.container}>
-                            <Image source={images[currentImageIndex]} style={{ width: 250, height: 150 }} />
-                            <Image source={hand} style={{ width: 200, height: 200 }} />
+                            <Image source={images[currentImageIndex]} style={{ width: isTablet ? 350 : 250, height: isTablet ? 250 : 150 }} />
+                            <Image source={hand} style={{ width: isTablet ? 300 : 200, height: isTablet ? 300 : 200 }} />
                         </View>
                     <View >
                         <Button text="Encerrar" onPress={goBack} style={stylesPranayama.button} />
@@ -164,22 +166,21 @@ function PranayamaScreen() {
     );
 }
 
-export default PranayamaScreen
-
 const stylesPranayama = StyleSheet.create({
     secondsText: {
-        fontSize: 40,
+        fontSize: isTablet ? 80 : 40,
         marginBottom: 20,
     },
     circleText: {
-        fontSize: 100,
+        fontSize: isTablet ? 200 : 100,
         fontWeight: 'bold',
         color: 'white',
     },
     circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 100,
+        width: isTablet ? 300 : 150,
+        height: isTablet ? 300 : 150,
+        borderRadius: isTablet ? 200 : 100,
+        marginTop: isTablet ? 20 : 10,
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
@@ -197,7 +198,7 @@ const stylesPranayama = StyleSheet.create({
     },
     button: {
         backgroundColor: 'red',
-        width: 150,
+        width: isTablet ? 350 : 150,
         height: 60,
         marginTop: 50
     },
@@ -209,7 +210,7 @@ const stylesPranayama = StyleSheet.create({
     },
     container: {
         flex: 1,
-        height: 400,
+        height: isTablet ? 600 : 400,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
