@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Linking } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,7 +43,7 @@ import { useFonts } from "expo-font";
 import * as Notifications from 'expo-notifications';
 import * as notificationService from './utils/notifications';
 
-export default function App() {
+function App() {
 
   // Font
   const [fontsLoaded] = useFonts({
@@ -73,7 +72,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='Home'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Anxiety" component={AnxietyScreen} />
         <Stack.Screen name="Sound" component={SoundScreen} />
@@ -100,3 +99,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default App

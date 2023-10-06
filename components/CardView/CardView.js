@@ -1,14 +1,16 @@
-import { View, Text, StyleSheet, Platform } from "react-native";
+import { View, Text, StyleSheet, Platform, Dimensions } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../Button/Button";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function CardView({ children, title, navigate, bgColor }) {
 
     const navigation = useNavigation();
 
     return (
-        <View style={[stylesCard.card, {backgroundColor: bgColor}]}>
+        <View style={[ stylesCard.card, { backgroundColor: bgColor } ]}>
             <View>
                 <Text style={stylesCard.title}>{title}</Text>
                 <Text style={stylesCard.recomendation}>Recomendações</Text>
@@ -23,12 +25,13 @@ export function CardView({ children, title, navigate, bgColor }) {
 
 const stylesCard = StyleSheet.create({
     card: {
-        borderWidth: 1,
+        borderWidth: isTablet ? 2 : 1,
         borderColor: '#1f1f1f',
         borderRadius: 8,
-        width: 230,
-        marginBottom: 20,
-        padding: 16,
+        width: isTablet ? 340 : 230,
+        marginBottom: isTablet ? 40 : 20,
+        marginTop: isTablet && 10,
+        padding: isTablet ? 20 : 16,
         ...Platform.select({
             android: {
                 elevation: 5
@@ -43,23 +46,23 @@ const stylesCard = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 18,
+        fontSize: isTablet ? 22 : 18,
         fontWeight: 'bold',
-        borderBottomWidth: 1,
+        borderBottomWidth: isTablet ? 2 : 1,
         paddingBottom: 8,
         textAlign: 'center'
     },
     recomendation: {
         color: 'white',
-        fontSize: 14,
+        fontSize: isTablet ? 20 : 14,
         fontFamily: 'Roboto_500Medium',
         fontWeight: 'bold',
         textAlign: 'center',
-        marginVertical: 5
+        marginVertical: isTablet ? 10 : 5
     },
     cardContentContainer: {
         flex: 1,
         flexDirection: 'row',
-        marginVertical: 5
+        marginVertical: isTablet ? 10: 5
     }
 });

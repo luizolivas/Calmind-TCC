@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform, Dimensions } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
@@ -11,6 +11,8 @@ import { Audio } from 'expo-av';
 
 // Components
 import { Button } from '../../../components/Button/Button';
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function FourSevenEightScreen() {
 
@@ -160,7 +162,6 @@ export function FourSevenEightScreen() {
                 ]}>
                 <Text style={stylesFourSevenEight.circleText}>{currentTime}</Text>
             </Animated.View>
-
             <View style={stylesFourSevenEight.instructionsContainer}>
                 {/* Renderiza a contagem regressiva ou o número de ciclos */}
                 {countdown > 0 ? (
@@ -172,7 +173,6 @@ export function FourSevenEightScreen() {
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
                 </View>
             </View>
-
             <View style={{ flex: 1 }}></View>
         </CustomGradient>
     );
@@ -180,18 +180,19 @@ export function FourSevenEightScreen() {
 
 const stylesFourSevenEight = StyleSheet.create({
     secondsText: {
-        fontSize: 40,
+        fontSize: isTablet ? 80 : 40,
         marginBottom: 20,
     },
     circleText: {
-        fontSize: 100,
+        fontSize: isTablet ? 200 : 100,
         fontWeight: 'bold',
         color: 'white',
     },
     circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 100,
+        width: isTablet ? 300 : 150,
+        height: isTablet ? 300 : 150,
+        borderRadius: isTablet ? 200 : 100,
+        marginTop: isTablet ? 20 : 10,
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
@@ -210,6 +211,6 @@ const stylesFourSevenEight = StyleSheet.create({
     instructionsContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 20,
+        marginVertical: isTablet ? 40 : 20,
     },
 });

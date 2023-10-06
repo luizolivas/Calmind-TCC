@@ -1,5 +1,4 @@
-
-import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform } from 'react-native';
+import { Text, StyleSheet, View, BackHandler, Animated, Easing, Platform, Dimensions } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
@@ -12,6 +11,8 @@ import { Audio } from 'expo-av';
 
 // Components
 import { Button } from '../../../components/Button/Button';
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function DiafragmaticScreen() {
 
@@ -183,18 +184,19 @@ export function DiafragmaticScreen() {
 
 const stylesDiafragmatic = StyleSheet.create({
     secondsText: {
-        fontSize: 40,
+        fontSize: isTablet ? 80 : 40,
         marginBottom: 20,
     },
     circleText: {
-        fontSize: 100,
+        fontSize: isTablet ? 200 : 100,
         fontWeight: 'bold',
         color: 'white',
     },
     circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 100,
+        width: isTablet ? 300 : 150,
+        height: isTablet ? 300 : 150,
+        borderRadius: isTablet ? 200 : 100,
+        marginTop: isTablet ? 20 : 10,
         backgroundColor: 'lightblue',
         alignItems: 'center',
         justifyContent: 'center',
@@ -217,7 +219,7 @@ const stylesDiafragmatic = StyleSheet.create({
     },
     instructionRespiration: {
         textAlign: 'center',
-        fontSize: 17,
+        fontSize: isTablet ? 20 : 17,
         marginTop: 10,
         marginBottom: 20
     }

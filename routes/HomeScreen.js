@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions  } from "react-native";
 import { useEffect, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 
@@ -17,6 +17,8 @@ import { ImageLogo } from "../components/ImageLogo/ImageLogo";
 
 // Notification
 import { setupNotificationHandling } from "../utils/notifications";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function HomeScreen() {
 
@@ -88,38 +90,38 @@ export function HomeScreen() {
     return (
         <CustomGradient>
             <ImageLogo />
-            <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium' }}>'{quote}'</Text>
-            <Text style={{ fontSize: 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic' }}>- {author}</Text>
+            <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_500Medium' }}>'{quote}'</Text>
+            <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic' }}>- {author}</Text>
             <View style={stylesHome.sectionContainer}>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
-                    <Icon name="leanpub" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Aprenda sobre Ansiedade</Text>
+                    <Icon name="leanpub" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Aprenda sobre Ansiedade</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Sound")}>
-                    <Icon name="music" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Relaxamento Sonoro</Text>
+                    <Icon name="music" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Relaxamento Sonoro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Podcast")}>
-                    <Icon name="headphones" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Podcasts</Text>
+                    <Icon name="headphones" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Podcasts</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Calm")}>
-                    <Icon name="leaf" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Acalme-se</Text>
+                    <Icon name="leaf" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Acalme-se</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Selfcare")}>
-                    <Icon name="medkit" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Autocuidados</Text>
+                    <Icon name="medkit" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Autocuidados</Text>
                 </TouchableOpacity>
             </View>
             <View style={stylesHome.helpContainer}>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Help")}>
-                    <Icon name="question-circle" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Ajuda</Text>
+                    <Icon name="question-circle" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Ajuda</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
-                    <Icon name="comments" size={35} color={baseColor} />
-                    <Text style={{ fontFamily: 'Roboto_400Regular' }}>Conversar</Text>
+                    <Icon name="comments" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Conversar</Text>
                 </TouchableOpacity>
             </View>
         </CustomGradient>

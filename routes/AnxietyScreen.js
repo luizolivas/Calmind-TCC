@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, ActivityIndicator } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator, Dimensions } from "react-native";
 import { useEffect, useState } from 'react';
 
 // Utils
@@ -16,6 +16,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 // Components
 import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function AnxietyScreen() {
 
@@ -62,7 +64,7 @@ export function AnxietyScreen() {
                 <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="leanpub" size={100} color={baseColor} />
+                    <Icon style={styles.icon} name="leanpub" size={ isTablet ? 120 : 100 } color={baseColor} />
                     <Text style={styles.title}>Aprenda sobre Ansiedade</Text>
                     <Text style={styles.description}>
                         Nesta seção você irá aprender o que de fato é a ansiedade, quais suas possíveis causas e também maneiras de alivia-la.

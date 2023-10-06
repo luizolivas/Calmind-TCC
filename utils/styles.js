@@ -1,22 +1,24 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 50,
+      padding: isTablet ? 70 : 50,
       alignItems: 'center',
       justifyContent: 'center'
     },
     title: {
         textAlign: 'center',
         fontFamily: 'Roboto_700Bold',
-        fontSize: 24,
+        fontSize: isTablet ? 30 : 24,
         marginVertical: 20
     },
     description: {
         textAlign: 'center',
         fontFamily: 'Roboto_400Regular',
-        fontSize: 18,
+        fontSize: isTablet ? 22 : 18,
         marginTop: 10,
         marginBottom: 20
     },
@@ -31,15 +33,15 @@ export const styles = StyleSheet.create({
     videoTitle: {
         textAlign: 'center',
         fontFamily: 'Roboto_500Medium',
-        fontSize: 20,
+        fontSize: isTablet ? 26 : 20,
         fontWeight: 'bold'
     },
     thumbnail: {
-        width: 240,
-        height: 160,
+        width: isTablet ? 360 : 240,
+        height: isTablet ? 220 : 160,
         borderRadius: 15,
         borderColor: 'black',
-        borderWidth: 1
+        borderWidth: isTablet ? 2 : 1
     },
     // Cards Style
     containerCards: {
@@ -50,7 +52,7 @@ export const styles = StyleSheet.create({
     // Button back
     buttonGoBack: {
         backgroundColor: 'red',
-        width: 150,
+        width: isTablet ? 300 : 150,
         height: 60,
         marginTop: 50,
         marginBottom: 10,

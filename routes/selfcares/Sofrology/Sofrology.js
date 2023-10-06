@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -10,6 +10,8 @@ import { useNavigation } from "@react-navigation/native";
 import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function Sofrology() {
 
@@ -50,7 +52,7 @@ export function Sofrology() {
 
 const stylesSofrology = StyleSheet.create({
     button: {
-        width: 260,
+        width: isTablet ? 350 : 260,
         height: 60,
         marginTop: 50,
         marginBottom: 10,

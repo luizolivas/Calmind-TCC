@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Dimensions } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
@@ -12,13 +12,14 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
 import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
-export function CalmScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
 
+export function CalmScreen() {
     return (
         <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="leaf" size={100} color={baseColor} />
+                <Icon style={styles.icon} name="leaf" size={ isTablet ? 120 : 100 } color={baseColor} />
                 <Text style={styles.title}>Acalme-se</Text>
                 <Text style={styles.description}>
                     Aprenda técnicas de respiração para acalmar a mente e encontrar tranquilidade. Descubra recomendações para suas necessidades.

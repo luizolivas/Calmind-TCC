@@ -1,4 +1,6 @@
-import { TouchableOpacity, Text, StyleSheet, Platform } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, Platform, Dimensions } from "react-native";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function Button({ text, onPress, style }) {
     return (
@@ -28,7 +30,7 @@ const stylesButton = StyleSheet.create({
     },
     buttonText: {
         color: '#FFFFFF',
-        fontSize: 16,
+        fontSize: isTablet ? 20 : 16,
         fontFamily: 'Roboto_700Bold',
     },
 })

@@ -1,12 +1,14 @@
-import { Image } from 'react-native';
+import { Image, Dimensions } from 'react-native';
 
 import logo from '../../assets/icon.png';
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function ImageLogo() {
     return (
         <Image 
             source={logo}
-            style={{width: 100, height: 100}}
+            style={{ width: isTablet ? 130 : 100, height: isTablet ? 130 : 100 }}
         />
     );
 }

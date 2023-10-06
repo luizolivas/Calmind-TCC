@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet,TouchableOpacity, ScrollView, Linking } from "react-native";
+import { View, Text, StyleSheet,TouchableOpacity, ScrollView, Linking, Dimensions } from "react-native";
 import { useState } from 'react';
 
 import { styles } from "../../../utils/styles";
@@ -10,6 +10,8 @@ import { useNavigation } from "@react-navigation/native";
 import { BackButton } from "../../../components/BackButton/BackButton";
 import { Button } from "../../../components/Button/Button";
 import { ButtonsSound } from "../../../components/ButtonsSound/ButtonsSound";
+
+const isTablet = Dimensions.get('window').width >= 600;
 
 export function InfoDiafragmaticScreen() {
 
@@ -42,7 +44,7 @@ export function InfoDiafragmaticScreen() {
                 <Text style={styles.description}>
                     Uma ótima técnica para acalmar a ansiedade mente e relaxar. Antes de começar com a respiração é necessário:
                 </Text>
-                <Text style={{fontSize: 15}}>
+                <Text style={{ fontSize: isTablet ? 20 : 15 }}>
                     1º: Comece sentando-se em postura reta, ou se preferir pode deitar-se. {'\n'}
                     {'\n'}2º: Coloque a mão no abdômen(barriga) acima do umbigo e abaixo do seu peito.{'\n'}
                     {'\n'}3º: Concentre-se na sua respiração.{'\n'}
@@ -68,14 +70,16 @@ const stylesIns = StyleSheet.create({
         color: 'blue',
         textDecorationLine: 'underline',
         textAlign: 'center',
-        marginTop: 10,
-        marginBottom: 20
+        marginTop: isTablet ? 20 : 10,
+        marginBottom: 20,
+        fontSize: isTablet ? 20 : 15
     },
     button: {
-        width: 280,
+        width: isTablet ? 350 : 260,
         height: 60,
         marginTop: 50,
         marginBottom: 10,
+        alignSelf: 'center',
         backgroundColor: "#50C878"
     }
 });
