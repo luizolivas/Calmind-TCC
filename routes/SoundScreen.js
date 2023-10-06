@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, ActivityIndicator  } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator, Dimensions } from "react-native";
 import { useEffect, useState } from 'react';
 
 import { styles } from "../utils/styles";
@@ -16,7 +16,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { BackButton } from "../components/BackButton/BackButton";
 import { VideoList } from "../components/VideoList/VideoList";
 
-function SoundScreen() {
+export function SoundScreen() {
+
+    const isTablet = Dimensions.get('window').width >= 600;
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -75,21 +77,21 @@ function SoundScreen() {
                 <ActivityIndicator size="large" color={baseColor} style={{ flex: 1 }} />
             ) : (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Icon style={styles.icon} name="music" size={100} color={baseColor} />
+                    <Icon style={styles.icon} name="music" size={ isTablet ? 120 : 100 } color={baseColor} />
                     <Text style={styles.title}>Relaxamento Sonoro</Text>
                     <Text style={styles.description}>
                         Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
                     </Text>
                     <View>
-                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>Lo-fi</Text>
+                        <Text style={[styles.videoTitle, { fontSize: isTablet ? 30 : 22, color: baseColor }]}>Lo-fi</Text>
                         {lofiVideos && (
                             <VideoList videos={lofiVideos} />
                         )}
-                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>Meditação</Text>
+                        <Text style={[styles.videoTitle, { fontSize: isTablet ? 30 : 22, color: baseColor }]}>Meditação</Text>
                         {meditationVideos && (
                             <VideoList videos={meditationVideos} />
                         )}
-                        <Text style={[styles.videoTitle, { fontSize: 22, color: baseColor }]}>432hz</Text>
+                        <Text style={[styles.videoTitle, { fontSize: isTablet ? 30 : 22, color: baseColor }]}>432hz</Text>
                         {specialVideos && (
                             <VideoList videos={specialVideos} />
                         )}
@@ -99,5 +101,3 @@ function SoundScreen() {
         </CustomGradient>
     );
 }
-
-export default SoundScreen

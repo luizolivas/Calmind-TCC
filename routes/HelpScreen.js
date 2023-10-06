@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Dimensions } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
@@ -12,11 +12,14 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { HelpContentElement } from "../components/HelpContentElement/HelpContentElement";
 
 export function HelpScreen() {
+
+    const isTablet = Dimensions.get('window').width >= 600;
+
     return (
         <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="question-circle" size={100} color={baseColor} />
+                <Icon style={styles.icon} name="question-circle" size={ isTablet ? 120 : 100 } color={baseColor} />
                 <Text style={styles.title}>Ajuda</Text>
                 <Text style={styles.description}>
                     Explore nosso guia intuitivo para dominar todas as funcionalidades e aproveitar ao máximo nossa aplicação.
@@ -33,8 +36,6 @@ export function HelpScreen() {
         </CustomGradient>
     );
 }
-
-export default HelpScreen
 
 const stylesHelp = StyleSheet.create({
     contentContainer: {

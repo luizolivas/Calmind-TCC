@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Linking  } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Dimensions  } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
@@ -7,9 +7,12 @@ import CustomGradient from "../utils/CustomGradient";
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
 
+// Component
 import { BackButton } from "../components/BackButton/BackButton";
 
-function TalkScreen() {
+const isTablet = Dimensions.get('window').width >= 600;
+
+export function TalkScreen() {
 
     const openChat = () => {
         Linking.openURL('https://www.cvv.org.br/chat/'); 
@@ -23,18 +26,18 @@ function TalkScreen() {
     return (
         <CustomGradient>
             <BackButton />
-            <Icon style={styles.icon} name="comments" size={100} color={baseColor} />
+            <Icon style={styles.icon} name="comments" size={ isTablet ? 120 : 100 } color={baseColor} />
             <Text style={styles.title}>Conversar</Text>
             <Text style={styles.description}>
                 Saiba que você não está passando por isso sozinho! O CVV - Centro de Valorização da Vida, um espaço seguro e confidencial, está pronto para ouvir você com empatia e carinho.
             </Text>
             <View style={stylesTalk.buttonContainer}>
                 <TouchableOpacity onPress={openChat} style={stylesTalk.button}>
-                    <Icon name="comments-o" size={90} color={"#4CAF50"} />
+                    <Icon name="comments-o" size={ isTablet ? 110 : 90 } color={"#4CAF50"} />
                     <Text style={styles.description}>Chat Online</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={openCall} style={stylesTalk.button}>
-                    <Icon name="phone-square" size={90} color={"#4CAF50"} />
+                    <Icon name="phone-square" size={ isTablet ? 110 : 90} color={"#4CAF50"} />
                     <Text style={styles.description}>Ligue</Text> 
                 </TouchableOpacity>
             </View>
@@ -42,8 +45,6 @@ function TalkScreen() {
         </CustomGradient>
     );
 }
-
-export default TalkScreen
 
 const stylesTalk = StyleSheet.create({
     buttonContainer: {

@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Dimensions } from "react-native";
 
 import { styles } from "../utils/styles";
 import { baseColor } from "../utils/baseColor";
@@ -12,13 +12,15 @@ import { BackButton } from "../components/BackButton/BackButton";
 import { CardView } from "../components/CardView/CardView";
 import { CardRecomendation } from "../components/CardRecomendation/CardRecomendation";
 
-function SelfcareScreen() {
+export function SelfcareScreen() {
+
+    const isTablet = Dimensions.get('window').width >= 600;
 
     return (
         <CustomGradient>
             <BackButton />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Icon style={styles.icon} name="medkit" size={100} color={baseColor} />
+                <Icon style={styles.icon} name="medkit" size={ isTablet ? 120 : 100 } color={baseColor} />
                 <Text style={styles.title}>Autocuidados</Text>
                 <Text style={styles.description}>
                     Priorize seu bem-estar com nossas práticas de autocuidado.
@@ -35,5 +37,3 @@ function SelfcareScreen() {
         </CustomGradient>
     );
 }
-
-export default SelfcareScreen

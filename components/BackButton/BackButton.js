@@ -1,11 +1,14 @@
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, Dimensions } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 
 // Icons in https://fontawesome.com/v4/icons/
 import Icon from "react-native-vector-icons/FontAwesome";
 
+const isTablet = Dimensions.get('window').width >= 600;
+
 export function BackButton() {
+
 
     const navigation = useNavigation();
 
@@ -16,10 +19,10 @@ export function BackButton() {
     return (
         <View style={styles.backContainer}>
             <TouchableOpacity onPress={goBack}>
-                <Icon name="arrow-left" size={35} color={"black"} />
+                <Icon name="arrow-left" size={ isTablet ? 45 : 35 } color={"black"} />
             </TouchableOpacity>
             <TouchableOpacity onPress={goBack} style={styles.backButtonText}>
-                <Text>Voltar</Text>
+                <Text style={styles.backButtonText}>Voltar</Text>
             </TouchableOpacity>
         </View>
     );
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
       marginLeft: 0, 
     },
     backButtonText: {
-        fontSize: 20,
+        fontSize: isTablet ? 25 : 20,
         fontFamily: 'Roboto_500Medium',
         marginLeft: 10
     }

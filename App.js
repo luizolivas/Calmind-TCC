@@ -4,14 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 // Routes
-import HomeScreen from './routes/HomeScreen';
-import AnxietyScreen from './routes/AnxietyScreen';
-import SoundScreen from './routes/SoundScreen';
-import PodcastScreen from './routes/PodcastScreen';
-import CalmScreen from './routes/CalmScreen';
-import SelfcareScreen from './routes/SelfcareScreen';
-import HelpScreen from './routes/HelpScreen';
-import TalkScreen from './routes/TalkScreen';
+import { HomeScreen } from './routes/HomeScreen';
+import { AnxietyScreen } from './routes/AnxietyScreen';
+import { SoundScreen } from './routes/SoundScreen';
+import { PodcastScreen } from './routes/PodcastScreen';
+import { CalmScreen } from './routes/CalmScreen';
+import { SelfcareScreen } from './routes/SelfcareScreen';
+import { HelpScreen } from './routes/HelpScreen';
+import { TalkScreen } from './routes/TalkScreen';
 
 // Respirations
 import DiafragmaticScreen from './routes/respirations/Diafragmatic/DiafragmaticScreen';
