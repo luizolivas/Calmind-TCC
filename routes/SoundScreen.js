@@ -80,7 +80,7 @@ export function SoundScreen() {
                     <Icon style={styles.icon} name="music" size={ isTablet ? 120 : 100 } color={baseColor} />
                     <Text style={styles.title}>Relaxamento Sonoro</Text>
                     <Text style={styles.description}>
-                        Aproveite essa seção com músicas para acalmar, relexar e distrair a mente.
+                        Aproveite essa seção com músicas para acalmar, relaxar e distrair a mente.
                     </Text>
                     <View>
                         <Text style={[styles.videoTitle, { fontSize: isTablet ? 30 : 22, color: baseColor }]}>Lo-fi</Text>

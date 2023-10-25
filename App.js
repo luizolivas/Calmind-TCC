@@ -66,7 +66,7 @@ function App() {
   });
 
   Notifications.cancelAllScheduledNotificationsAsync().then(() => {
-    notificationService.scheduleNotification('Lembre-se de relaxar', 'Não se esqueça de cuidar do seu bem-estar emocional. Reserve um momento para se acalmar.', 9, 47, 'Home')
+    notificationService.scheduleNotification('Lembre-se de relaxar', 'Não se esqueça de cuidar do seu bem-estar emocional. Reserve um momento para se acalmar.', 8, 0, 'Home')
     notificationService.scheduleNotification('Respire profundamente', 'Faça uma pausa e pratique respirações profundas para aliviar o estresse.', 12, 30, 'Calm')
     notificationService.scheduleNotification('Escute música relaxante', 'Desfrute de músicas suaves para acalmar a mente e relaxar.', 18, 30, 'Sound')
     notificationService.scheduleNotification('Aprenda sobre ansiedade', 'Explore nossos recursos para entender melhor e lidar com a ansiedade.', 22, 0, 'Anxiety')

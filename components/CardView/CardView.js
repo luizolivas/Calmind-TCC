@@ -12,7 +12,9 @@ export function CardView({ children, title, navigate, bgColor }) {
     return (
         <View style={[ stylesCard.card, { backgroundColor: bgColor } ]}>
             <View>
-                <Text style={stylesCard.title}>{title}</Text>
+                <View style={stylesCard.titleContainer}>
+                    <Text style={stylesCard.title}>{title}</Text>
+                </View>
                 <Text style={stylesCard.recomendation}>Recomendações</Text>
                 <View style={stylesCard.cardContentContainer}>
                     {children} 
@@ -44,12 +46,14 @@ const stylesCard = StyleSheet.create({
             }
         })
     },
+    titleContainer: {
+        borderBottomWidth: isTablet ? 2 : 1,
+        paddingBottom: 8,
+    },
     title: {
         color: 'white',
         fontSize: isTablet ? 22 : 18,
         fontWeight: 'bold',
-        borderBottomWidth: isTablet ? 2 : 1,
-        paddingBottom: 8,
         textAlign: 'center'
     },
     recomendation: {
