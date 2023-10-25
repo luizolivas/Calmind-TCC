@@ -1,10 +1,12 @@
 import * as Notifications from 'expo-notifications';
 
-export function scheduleNotification(title, body, hours, minutes, route) {
+export async function scheduleNotification(title, body, hours, minutes, route) {
 
-    const notificationPermission = true
+    const notificationPermission1 = await Notifications.getPermissionsAsync();
 
-    if (notificationPermission) {
+    const notificationPermission2 = await Notifications.requestPermissionsAsync();
+
+    if (notificationPermission1 && notificationPermission2) {
         const notificationDate = new Date();
         notificationDate.setHours(hours, minutes, 0, 0)
 
