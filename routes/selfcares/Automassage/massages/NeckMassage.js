@@ -12,6 +12,9 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
+import { ImageExercise } from '../../../../components/ImageExercise/ImageExercise';
+
+import neck from '../../../../assets/neck.jpg';
 
 export function NeckMassage() {
 
@@ -77,6 +80,7 @@ export function NeckMassage() {
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Massagem nos Ombros e Pescoço</Text>
+                <ImageExercise imageUrl={neck} />
                 <StepByStep list={listOfSteps} />
                 <View style={{alignItems: 'center'}}>
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />

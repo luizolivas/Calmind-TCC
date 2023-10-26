@@ -12,6 +12,9 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
+import { ImageExercise } from '../../../../components/ImageExercise/ImageExercise';
+
+import handMassage from '../../../../assets/handMassage.jpg';
 
 export function HandMassage() {
 
@@ -76,6 +79,7 @@ export function HandMassage() {
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Massagem nas Mãos</Text>
+                <ImageExercise imageUrl={handMassage} />
                 <StepByStep list={listOfSteps} />
                 <View style={{alignItems: 'center'}}>
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
