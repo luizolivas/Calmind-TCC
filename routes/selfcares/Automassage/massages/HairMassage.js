@@ -12,6 +12,9 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
+import { ImageExercise } from '../../../../components/ImageExercise/ImageExercise';
+
+import hair from '../../../../assets/hair.jpg';
 
 export function HairMassage() {
 
@@ -74,6 +77,7 @@ export function HairMassage() {
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Massagem no Couro Cabeludo</Text>
+                <ImageExercise imageUrl={hair} />
                 <StepByStep list={listOfSteps} />
                 <View style={{alignItems: 'center'}}>
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />

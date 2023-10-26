@@ -1,4 +1,4 @@
-import { Text, View, ScrollView, BackHandler } from 'react-native';
+import { Text, View, ScrollView, BackHandler, Image } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useBackHandler } from '@react-native-community/hooks';
 
@@ -12,6 +12,9 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../components/Button/Button';
 import { StepByStep } from '../../../components/StepByStep/StepByStep';
+import { ImageExercise } from '../../../components/ImageExercise/ImageExercise';
+
+import sofrology from '../../../assets/sofrology.jpg';
 
 export function SofrologyAct() {
 
@@ -81,6 +84,7 @@ export function SofrologyAct() {
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Relaxamento Progressivo</Text>
+                <ImageExercise imageUrl={sofrology}/>
                 <StepByStep list={listOfSteps} />
                 <View style={{alignItems: 'center'}}>
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />

@@ -13,6 +13,9 @@ import { Audio } from 'expo-av';
 // Components
 import { Button } from '../../../../components/Button/Button';
 import { StepByStep } from '../../../../components/StepByStep/StepByStep';
+import { ImageExercise } from '../../../../components/ImageExercise/ImageExercise';
+
+import tempora from '../../../../assets/tempora.jpg';
 
 export function TemporaMassage() {
 
@@ -76,6 +79,7 @@ export function TemporaMassage() {
         <CustomGradient>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Massagem nas Têmporas</Text>
+                <ImageExercise imageUrl={tempora} />
                 <StepByStep list={listOfSteps} />
                 <View style={{alignItems: 'center'}}>
                     <Button text="Encerrar" onPress={goBack} style={styles.buttonGoBack} />
