@@ -4,7 +4,7 @@ import { styles } from "../utils/styles";
 const CustomGradient = ({ children }) => {
   return (
     <LinearGradient
-      colors={['#E8F5E9', '#C8E6C9']}
+      colors={['#f5f7f5', '#88db8e']}
       style={styles.container}
     >
       {children}
