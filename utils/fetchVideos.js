@@ -28,9 +28,13 @@ function filterVideos(videos) {
             title.includes("venci") ||
             title.includes("vencendo") ||
             title.includes("perder") ||
+            title.includes("perdas") ||
             title.includes("perdeu") ||
             title.includes("perdi") ||
             title.includes("perdendo") ||
+            title.includes("morte") ||
+            title.includes("morrer") ||
+            title.includes("matar") ||
             title.includes("disputa") ||
             title.includes("disputar") ||
             title.includes("disputando") ||
@@ -47,7 +51,15 @@ function filterVideos(videos) {
 export async function fetchVideos(searchQuery, quantity) {
     try {
         const apiKey = 'AIzaSyBrsWY3n5sCkIXqI8h4JF8Ea29axOHw2cw';
-        const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
+
+        let response;
+
+        if (searchQuery == 'podcast ansiedade') {
+            const playlistId = 'PLumBGkXO55QYe-9OkpCVRtDRAa-wzIpSO';
+            response = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${quantity}&order=datePublished&key=${apiKey}`);
+        } else {
+            response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
+        }
 
         return filterVideos(response.data.items);
     } catch (error) {

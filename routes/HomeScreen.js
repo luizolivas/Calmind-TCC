@@ -22,8 +22,8 @@ const isTablet = Dimensions.get('window').width >= 600;
 
 export function HomeScreen() {
 
-    const [quote, setQuote] = useState();
-    const [author, setAuthor] = useState();
+    const [quote, setQuote] = useState("Carregando frase..");
+    const [author, setAuthor] = useState("Carregando autor..");
 
     const navigation = useNavigation();
 
@@ -32,24 +32,11 @@ export function HomeScreen() {
 
     // Phrase logic
     const getQuote = async () => {
-        try {
-            const response = await axios.get('https://zenquotes.io/api/random');
-            return response.data[0];
-        } catch (error) {
-            console.error('Error fetching quote:', error);
-            return;
-        }
-    }
+        const quotes = require('../utils/phrases.json');
 
-    const translateQuote = async (quote) => {
-        try {
-            const response = await axios.get(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(quote)}`);
-            const translatedQuote = response.data[0][0][0];
-            return translatedQuote;
-        } catch (error) {
-            console.error('Error translating quote:', error);
-            return null;
-        }
+        const randomIndex = Math.min(Math.floor(Math.random() * quotes.length), quotes.length - 1);
+
+        return quotes[randomIndex];
     }
 
     useEffect(() => {
@@ -63,13 +50,12 @@ export function HomeScreen() {
             if(lastFetchedDate !== currentDate) {
                 const newQuote = await getQuote();
 
-                if(newQuote.q) {
-                    const translatedQuote = await translateQuote(newQuote.q);
-                    setQuote(translatedQuote);
-                    setAuthor(newQuote.a);
+                if(newQuote.text) {
+                    setQuote(newQuote.text);
+                    setAuthor(newQuote.author);
 
-                    await AsyncStorage.setItem('lastAuthor', newQuote.a);
-                    await AsyncStorage.setItem('lastQuote', translatedQuote);
+                    await AsyncStorage.setItem('lastAuthor', newQuote.author);
+                    await AsyncStorage.setItem('lastQuote', newQuote.text);
                     await AsyncStorage.setItem('lastFetchedDate', currentDate);
                 }
             } else {
@@ -90,7 +76,7 @@ export function HomeScreen() {
     return (
         <CustomGradient>
             <ImageLogo />
-            <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_500Medium' }}>'{quote}'</Text>
+            <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_500Medium' }}>{quote}</Text>
             <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_500Medium', fontStyle: 'italic' }}>- {author}</Text>
             <View style={stylesHome.sectionContainer}>
                 <TouchableOpacity style={stylesHome.contentSectionContainer} onPress={() => navigation.navigate("Anxiety")}>
