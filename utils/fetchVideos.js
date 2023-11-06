@@ -55,8 +55,9 @@ export async function fetchVideos(searchQuery, quantity) {
         let response;
 
         if (searchQuery == 'podcast ansiedade') {
-            const playlistId = 'PLumBGkXO55QYe-9OkpCVRtDRAa-wzIpSO';
-            response = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${quantity}&order=datePublished&key=${apiKey}`);
+            const channelId = 'UCHp-YGxhMroi6brRoVDjQ1Q';
+            
+            response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&q=Como vai você&maxResults=${quantity}&order=date&key=${apiKey}`);
         } else {
             response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
         }
