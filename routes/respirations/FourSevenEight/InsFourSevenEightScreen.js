@@ -33,7 +33,7 @@ export function InsFourSevenEightScreen() {
             <BackButton />
             <Text style={styles.title}>Técnica de Respiração: 4-7-8</Text>
             <Text style={styles.description}>
-                Iremos ajudar você a realizar a técnica de respiração 4-7-8, uma ótima maneira de acalmar a mente e relaxar. Encontre um local tranquilo e sente-se ou deite-se confortavelmente.
+                Iremos ajudar você a realizar a técnica de respiração 4-7-8, uma ótima maneira de acalmar a mente e relaxar. Encontre um local tranquilo e sente-se ou deite-se confortavelmente. Você será convidado(a) a inspirar, segurar o ar e depois expirar por um certo tempo e ritmo.
             </Text>
             <ButtonsSound onFunction={on} offFunction={mute} />
             <Button text="Iniciar" onPress={() => navigation.navigate('FourSevenEight', { isSoundOn })} style={stylesIns.button}/>
