@@ -106,8 +106,8 @@ export function HomeScreen() {
                     <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Ajuda</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylesHome.contentHelpContainer} onPress={() => navigation.navigate("Talk")}>
-                    <Icon name="comments" size={ isTablet ? 55 : 35 } color={baseColor} />
-                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Conversar</Text>
+                    <Icon name="heart" size={ isTablet ? 55 : 35 } color={baseColor} />
+                    <Text style={{ fontSize: isTablet ? 20 : 12.5, fontFamily: 'Roboto_400Regular' }}>Apoio</Text>
                 </TouchableOpacity>
             </View>
         </CustomGradient>
