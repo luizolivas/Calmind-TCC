@@ -42,7 +42,7 @@ export function InfoDiafragmaticScreen() {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.title}>Técnica de Respiração: Diafragmática</Text>
                 <Text style={styles.description}>
-                    Uma ótima técnica para acalmar a ansiedade mente e relaxar. Antes de começar com a respiração é necessário:
+                    Uma ótima técnica para reduzir a ansiedade, acalmar e relaxar. Antes de começar a respiração::
                 </Text>
                 <Text style={{ fontSize: isTablet ? 20 : 15 }}>
                     1º: Comece sentando-se em postura reta, ou se preferir pode deitar-se. {'\n'}
