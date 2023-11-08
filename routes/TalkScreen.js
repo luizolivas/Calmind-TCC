@@ -14,19 +14,20 @@ import { BackButton } from "../components/BackButton/BackButton";
 const isTablet = Dimensions.get('window').width >= 600;
 
 export function TalkScreen() {
-  
 
     const openChat = () => {
-
-        Linking.openURL('https://www.cvv.org.br/chat/'); t
-    }
+        Linking.openURL('https://www.cvv.org.br/chat/');
+    };
 
     const openCall = () => {
         const phoneNumber = '188'; 
         Linking.openURL(`tel:${phoneNumber}`);
-    }
+    };
 
-
+    const openMaps = () => {
+        const url = `https://www.google.com/maps/search/UBS+ou+CAPS`;
+        Linking.openURL(url);
+    };
 
     return (
         <CustomGradient>
@@ -34,8 +35,6 @@ export function TalkScreen() {
             <ScrollView showsVerticalScrollIndicator={false}>
             <Icon style={styles.icon} name="heart" size={ isTablet ? 120 : 100 } color={baseColor} />
             <Text style={styles.title}>Apoio</Text>
-            <Text style={styles.description}>
-            </Text>
             <Text style={stylesTalk.topic}>SUPORTE ONLINE - CVV</Text>
             <Text style={stylesTalk.descriptionSuport}>
                 Saiba que você não está passando por isso sozinho! O CVV - Centro de Valorização da Vida, um espaço seguro e confidencial, está pronto para ouvir você com empatia e carinho.
@@ -54,9 +53,9 @@ export function TalkScreen() {
 
             <Text style={stylesTalk.topic}>SUPORTE PRESENCIAL - UBS/CAPS</Text>
             <Text style={stylesTalk.descriptionSuport}>
-            Saiba que o apoio está ao seu alcance em sua cidade. Descubra os serviços oferecidos pelas Unidades Básicas de Saúde (UBS) e pelos Centros de Atenção Psicossocial (CAPS). Esses espaços físicos possibilitam suporte ou podem encaminhá-lo para ajuda profissional especializada.</Text>
+                Saiba que o apoio está ao seu alcance em sua cidade. Descubra os serviços oferecidos pelas Unidades Básicas de Saúde (UBS) e pelos Centros de Atenção Psicossocial (CAPS). Esses espaços físicos possibilitam suporte ou podem encaminhá-lo para ajuda profissional especializada.</Text>
             <View style={stylesTalk.buttonContainer}>
-                <TouchableOpacity onPress={openCall} style={stylesTalk.button}>
+                <TouchableOpacity onPress={openMaps} style={stylesTalk.button}>
                     <Icon name="map-marker" size={ isTablet ? 110 : 90 } color={"#4CAF50"} />
                     <Text style={styles.description}>Locais</Text>
                 </TouchableOpacity>
@@ -85,6 +84,7 @@ const stylesTalk = StyleSheet.create({
         color: 'white', 
         padding: 8, 
         textAlign: 'center',
+        borderTopLeftRadius: 20
     },
     descriptionSuport: {
         textAlign: 'justify',
