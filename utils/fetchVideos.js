@@ -38,6 +38,13 @@ function filterVideos(videos) {
             title.includes("disputa") ||
             title.includes("disputar") ||
             title.includes("disputando") ||
+            title.includes("disputei") ||
+            title.includes("sexualidade") ||
+            title.includes("sexo") ||
+            title.includes("sexual") ||
+            title.includes("matou") ||
+            title.includes("matar") ||
+            title.includes("matei") ||
             title.includes("disputei");
   
         if (!hasKeyword) {
@@ -52,15 +59,7 @@ export async function fetchVideos(searchQuery, quantity) {
     try {
         const apiKey = 'AIzaSyBrsWY3n5sCkIXqI8h4JF8Ea29axOHw2cw';
 
-        let response;
-
-        if (searchQuery == 'podcast ansiedade') {
-            const channelId = 'UCHp-YGxhMroi6brRoVDjQ1Q';
-            
-            response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&q=Como vai você&maxResults=${quantity}&order=date&key=${apiKey}`);
-        } else {
-            response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
-        }
+        const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&maxResults=${quantity}&key=${apiKey}`);
 
         return filterVideos(response.data.items);
     } catch (error) {
