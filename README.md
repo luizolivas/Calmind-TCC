@@ -23,7 +23,7 @@ Utilizei as seguintes bibliotecas:
 • **React Native Async Storage** para armazenar o token de cada usuário localmente em seu dispositivo.<br>
 • **Expo Notifications** para disparar as notificações no dispositivo.<br>
 
-## Rode em sua máquina
+## Execute em sua máquina
 
 Para executar este projeto localmente, siga as etapas abaixo:
 
